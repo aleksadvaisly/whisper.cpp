@@ -1,0 +1,7 @@
+ We noticed that in the GPT chat, in the project tab, we made a project and we feed you with information and you handle it nicely, but we want to go one step further.
+ We want to come out of such a cloud of conceptions and ideas and we want you to go down to the details in general, so always try to go down a layer lower.
+ For example, if we ask you what you can concretize today, for example in the context of Make, you can generate a proposal for us, for example, a few pipelines for Make, this is just a proposal.
+ For example, we want to go down to the details, so always try to go down a layer lower. For example, if we ask you what you can concretize today, for example, in the context of Make, you can generate a proposal for us, for example, a few pipelines for Make, this is just a proposal.
+ For example, we want to go down to the details, for example, in the context of Make, you can generate a proposal for us, for example, a few pipelines for Make, this is just a proposal.
+ For example, if you don't know how to realize the message bus, just tell us about it, that you have some proposals and what we choose from it, and maybe just Make is already something I use, it's also worth writing down these assumptions, that you assume that we will use such available mechanisms, right?
+ Okay, that's all for now.
