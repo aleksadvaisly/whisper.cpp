@@ -1,0 +1,19 @@
+ Słuchaj, zauważyliśmy, że w chat GPT, w zakładce projekt, zrobiliśmy projekt i dokarmiamy Cię informacjami i ładnie sobie z tym wszystkim radzisz,
+ ale chcemy pójść krok dalej, chcemy wyjść z takiej chmury koncepcji pomysłów
+ i chcemy, żebyś od ogółu schodził do szczegółów, dlatego staraj się zawsze
+ warstwę niżej schodzić, na przykład jeżeli Cię poprosimy, że co nas
+ że stan dzisiejszy potrafisz skonkretyzować, na przykład w kontekście Make'a,
+ to żebyś nam wygenerował na przykład propozycje kilku pipeline'ów na Make'a.
+ To jest tylko propozycja, nie?
+ Na przykład, jeżeli nie będziesz wiedział, jak zrealizować MessageBus'a,
+ to po prostu nam o tym powiedz,
+ masz jakieś propozycje
+ i co sobie z tego
+ wybieramy, a może po prostu
+ make akurat już coś takiego obsługuje, to też
+ warto, żebyś te założenia
+ wypisał, tak, że
+ zakładasz, że będziemy korzystać
+ z takich dostępnych mechanizmów, tak?
+ Dobra, to
+ na razie wszystko.

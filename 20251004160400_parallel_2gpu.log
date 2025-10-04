@@ -1,0 +1,114 @@
+whisper_init_from_file_with_params_no_state: loading model from 'models/ggml-large-v3-turbo-q5_0.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.010 sec
+ggml_metal_device_init: GPU name:   Apple M1
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51866
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1280
+whisper_model_load: n_audio_head  = 20
+whisper_model_load: n_audio_layer = 32
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1280
+whisper_model_load: n_text_head   = 20
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 128
+whisper_model_load: ftype         = 8
+whisper_model_load: qntvr         = 2
+whisper_model_load: type          = 5 (large v3)
+whisper_model_load: adding 1609 extra tokens
+whisper_model_load: n_langs       = 100
+whisper_model_load:        Metal total size =   573.40 MB
+whisper_model_load: model size    =  573.40 MB
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   10.49 MB
+whisper_init_state: kv cross size =   31.46 MB
+whisper_init_state: kv pad  size  =    7.86 MB
+whisper_init_state: compute buffer (conv)   =   37.69 MB
+whisper_init_state: compute buffer (encode) =   55.35 MB
+whisper_init_state: compute buffer (cross)  =   24.63 MB
+whisper_init_state: compute buffer (decode) =  100.04 MB
+
+system_info: n_threads = 4 / 8 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/aleksander/Downloads/nagrania2/Talk1_16k.wav' (1234603 samples, 77.2 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = pl, task = transcribe, timestamps = 1 ...
+
+whisper_full_hybrid: Parallel GPU mode enabled: 3 chunks >= 2 threshold, using 2 GPU threads
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_full_hybrid: Thread 1 initialized with Metal + CPU backends (scheduler will optimize)
+whisper_init_state_with_backends: kv self size  =   10.49 MB
+whisper_init_state_with_backends: kv cross size =   31.46 MB
+whisper_init_state_with_backends: compute buffer (conv)   =   37.69 MB
+whisper_init_state_with_backends: compute buffer (encode) =   55.35 MB
+whisper_init_state_with_backends: compute buffer (cross)  =   24.63 MB
+whisper_init_state_with_backends: compute buffer (decode) =  100.04 MB
+whisper_full_hybrid: Main thread using GPU (Metal) backend
+
+[00:00:00.000 --> 00:00:19.000]   Słuchaj, zauważyliśmy, że w chat GPT, w zakładce projekt, zrobiliśmy projekt i dokarmiamy Cię informacjami i ładnie sobie z tym wszystkim radzisz,
+[00:00:19.000 --> 00:00:30.000]   ale chcemy pójść krok dalej, chcemy wyjść z takiej chmury koncepcji, pomysłów i chcemy, żebyś od ogółu schodził do szczegółu,
+[00:00:30.000 --> 00:00:38.580]   dlatego staraj się zawsze warstwę niżej schodzić, na przykład, jeżeli Cię poprosimy, że co następuje,
+[00:00:38.580 --> 00:00:40.940]   stan dzisiejszy potrafisz skonkretyzować
+[00:00:40.940 --> 00:00:42.420]   na przykład w kontekście Make'a,
+[00:00:42.420 --> 00:00:44.660]   to żebyś nam wygenerował na przykład
+[00:00:44.660 --> 00:00:46.820]   propozycje kilku
+[00:00:46.820 --> 00:00:48.660]   pipeline'ów na Make'a. To jest
+[00:00:48.660 --> 00:00:50.100]   tylko propozycja, nie?
+[00:00:50.100 --> 00:00:52.640]   Na przykład, jeżeli nie będziesz wiedział
+[00:00:52.640 --> 00:00:53.620]   jak zrealizować
+[00:00:53.620 --> 00:00:56.740]   MessageBus'a, to po prostu nam o tym
+[00:00:56.740 --> 00:00:57.820]   powiedz, że
+[00:00:57.820 --> 00:01:00.740]   masz jakieś propozycje
+[00:01:00.740 --> 00:01:02.900]   i co sobie z tego wybieramy.
+[00:01:02.900 --> 00:01:04.660]   A może po prostu Make akurat już
+[00:01:04.660 --> 00:01:06.840]   coś takiego obsługuje, to też warto, żebyś
+[00:01:06.840 --> 00:01:36.820]   nie podzielić, żebym zrealizować, że nie podzielić.
+ggml_metal_free: deallocating
+
+whisper_full_hybrid: Parallel GPU mode: audio split into 2 chunks across 2 GPU threads:
+whisper_full_hybrid: split 1 (GPU worker 1) - 00:00:38.580
+whisper_full_hybrid: Main thread (GPU) - 00:00:00.000
+whisper_full_hybrid: transcription quality may be degraded near chunk boundaries
+output_txt: saving output to '20251004160400_parallel_2gpu.txt'
+
+whisper_print_timings:     load time =   257.32 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =    30.65 ms
+whisper_print_timings:   sample time =   455.69 ms /  2373 runs (     0.19 ms per run)
+whisper_print_timings:   encode time =  5159.11 ms /     4 runs (  1289.78 ms per run)
+whisper_print_timings:   decode time =     6.68 ms /     3 runs (     2.23 ms per run)
+whisper_print_timings:   batchd time =  6136.98 ms /  2351 runs (     2.61 ms per run)
+whisper_print_timings:   prompt time =   119.00 ms /   367 runs (     0.32 ms per run)
+whisper_print_timings:    total time = 11143.23 ms
+ggml_metal_free: deallocating

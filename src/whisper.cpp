@@ -140,10 +140,9 @@ static void whisper_log_callback_default(ggml_log_level level, const char * text
 #define WHISPER_MAX_DECODERS 8
 #define WHISPER_MAX_NODES 4096
 
-// Hybrid mode configuration (main thread + workers)
-#define HYBRID_METAL_WORKERS 1  // Metal workers (not counting main thread)
-#define HYBRID_CPU_WORKERS   1  // CPU workers
-#define HYBRID_TOTAL_THREADS (1 + HYBRID_METAL_WORKERS + HYBRID_CPU_WORKERS)  // main + workers
+// Parallel GPU execution configuration (main thread + workers)
+#define PARALLEL_GPU_WORKERS 2  // Additional GPU workers (not counting main thread)
+#define PARALLEL_TOTAL_THREADS (1 + PARALLEL_GPU_WORKERS)  // main + workers
 
 static std::string format(const char * fmt, ...) {
     va_list ap;
@@ -8027,20 +8026,20 @@ int whisper_full_hybrid(
     const int chunk_size_samples = WHISPER_SAMPLE_RATE * WHISPER_CHUNK_SIZE;
     const int n_chunks = (n_samples - offset_samples + chunk_size_samples - 1) / chunk_size_samples;
 
-    if (n_chunks < 6) {
-        WHISPER_LOG_INFO("%s: Hybrid mode disabled: %d chunks < 6 threshold, falling back to Metal-only\n", __func__, n_chunks);
+    if (n_chunks < 2) {
+        WHISPER_LOG_INFO("%s: Parallel GPU mode disabled: %d chunks < 2 threshold, falling back to single-threaded GPU\n", __func__, n_chunks);
         return whisper_full(ctx, params, samples, n_samples);
     }
 
-    WHISPER_LOG_INFO("%s: Hybrid mode enabled: %d chunks >= 6 threshold, using %d Metal + %d CPU pattern\n",
-        __func__, n_chunks, HYBRID_METAL_WORKERS + 1, HYBRID_CPU_WORKERS);
+    WHISPER_LOG_INFO("%s: Parallel GPU mode enabled: %d chunks >= 2 threshold, using %d GPU threads\n",
+        __func__, n_chunks, PARALLEL_TOTAL_THREADS);
 
     if (!ctx->params.use_gpu) {
-        WHISPER_LOG_WARN("%s: GPU is disabled in context, hybrid mode requires GPU. Falling back to CPU-only\n", __func__);
+        WHISPER_LOG_WARN("%s: GPU is disabled in context, parallel mode requires GPU. Falling back to CPU-only\n", __func__);
         return whisper_full(ctx, params, samples, n_samples);
     }
 
-    const int n_processors = HYBRID_TOTAL_THREADS;
+    const int n_processors = PARALLEL_TOTAL_THREADS;
 
     int ret = 0;
 
@@ -8140,14 +8139,13 @@ int whisper_full_hybrid(
     ctx->state->t_decode_us /= n_processors;
 
     WHISPER_LOG_WARN("\n");
-    WHISPER_LOG_WARN("%s: Hybrid mode (%d Metal + %d CPU): audio split into %d chunks at:\n",
-        __func__, HYBRID_METAL_WORKERS + 1, HYBRID_CPU_WORKERS, n_processors);
+    WHISPER_LOG_WARN("%s: Parallel GPU mode: audio split into %d chunks across %d GPU threads:\n",
+        __func__, n_processors, PARALLEL_TOTAL_THREADS);
     for (int i = 0; i < n_processors - 1; ++i) {
-        const char* backend_name = (i < HYBRID_METAL_WORKERS) ? "Metal" : "CPU";
-        WHISPER_LOG_WARN("%s: split %d (%s) - %s\n", __func__, (i + 1), backend_name,
+        WHISPER_LOG_WARN("%s: split %d (GPU worker %d) - %s\n", __func__, (i + 1), i + 1,
             to_timestamp(100*((i + 1)*n_samples_per_processor)/WHISPER_SAMPLE_RATE + offset_t).c_str());
     }
-    WHISPER_LOG_WARN("%s: Main thread (Metal) - %s\n", __func__, to_timestamp(offset_t).c_str());
+    WHISPER_LOG_WARN("%s: Main thread (GPU) - %s\n", __func__, to_timestamp(offset_t).c_str());
     WHISPER_LOG_WARN("%s: transcription quality may be degraded near chunk boundaries\n", __func__);
 
     return ret;

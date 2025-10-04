@@ -1,0 +1,135 @@
+whisper_init_from_file_with_params_no_state: loading model from 'models/ggml-large-v3-turbo-q5_0.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.040 sec
+ggml_metal_device_init: GPU name:   Apple M1
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51866
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1280
+whisper_model_load: n_audio_head  = 20
+whisper_model_load: n_audio_layer = 32
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1280
+whisper_model_load: n_text_head   = 20
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 128
+whisper_model_load: ftype         = 8
+whisper_model_load: qntvr         = 2
+whisper_model_load: type          = 5 (large v3)
+whisper_model_load: adding 1609 extra tokens
+whisper_model_load: n_langs       = 100
+whisper_model_load:        Metal total size =   573.40 MB
+whisper_model_load: model size    =  573.40 MB
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   10.49 MB
+whisper_init_state: kv cross size =   31.46 MB
+whisper_init_state: kv pad  size  =    7.86 MB
+whisper_init_state: compute buffer (conv)   =   37.69 MB
+whisper_init_state: compute buffer (encode) =   55.35 MB
+whisper_init_state: compute buffer (cross)  =   24.63 MB
+whisper_init_state: compute buffer (decode) =  100.04 MB
+
+system_info: n_threads = 4 / 8 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/aleksander/Downloads/nagrania2/20251002_x34-JKlSjgo_Czy_da_si_by_dobrym_RODZICEM_i_jednoczenie_dobrym_.wav' (27798187 samples, 1737.4 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = pl, task = transcribe, timestamps = 1 ...
+
+whisper_full_hybrid: Hybrid mode enabled: 58 chunks >= 6 threshold, using 2 Metal + 1 CPU pattern
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_full_hybrid: Thread 1 initialized with Metal+CPU backends (scheduler will optimize)
+whisper_init_state_with_backends: kv self size  =   10.49 MB
+whisper_init_state_with_backends: kv cross size =   31.46 MB
+whisper_init_state_with_backends: compute buffer (conv)   =   37.69 MB
+whisper_init_state_with_backends: compute buffer (encode) =   55.35 MB
+whisper_init_state_with_backends: compute buffer (cross)  =   24.63 MB
+whisper_init_state_with_backends: compute buffer (decode) =  100.04 MB
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_full_hybrid: Thread 2 initialized with Metal+CPU backends (scheduler will optimize)
+whisper_init_state_with_backends: kv self size  =   10.49 MB
+whisper_init_state_with_backends: kv cross size =   31.46 MB
+whisper_init_state_with_backends: compute buffer (conv)   =   37.69 MB
+whisper_init_state_with_backends: compute buffer (encode) =   55.35 MB
+whisper_init_state_with_backends: compute buffer (cross)  =   24.63 MB
+whisper_init_state_with_backends: compute buffer (decode) =  100.04 MB
+whisper_full_hybrid: Main thread using GPU (Metal) backend
+
+[00:00:00.000 --> 00:00:03.100]   Czyli mówiłem jakiemuś klientowi, że słuchaj, już będę musiał mniej do Ciebie przyjeżdżać.
+[00:00:03.100 --> 00:00:07.740]   On mówił, no weź, Szymon, no, no weź, zostań, no.
+[00:00:07.740 --> 00:00:10.340]   A ja mówiłem, no dobra i zostawałem.
+[00:00:10.340 --> 00:00:15.940]   Cześć, witajcie, witam Was serdecznie w kolejnym odcinku programu Wise Business School.
+[00:00:15.940 --> 00:00:19.680]   W nietypowym odcinku, bo w odcinku, który jest po prostu Q&A-em.
+[00:00:19.680 --> 00:00:24.860]   I teraz uwaga, dla osób należących do grupy Nowoczesna Sprzedaż i Marketing w B2B,
+[00:00:24.860 --> 00:00:26.420]   tą grupę widzicie gdzieś tutaj.
+[00:00:26.420 --> 00:00:30.220]   Jeżeli jeszcze nie jesteście na Facebooku do niej zapisani, to koniecznie się zapiszcie.
+[00:00:30.220 --> 00:00:36.180]   Urządziłem Q&A, czyli powiedziałem, zadajcie pytania, a na kanale Wam na nie odpowiem.
+[00:00:36.180 --> 00:00:39.660]   Wy zadaliście, a teraz ja będę odpowiadał.
+[00:00:39.660 --> 00:00:42.720]   W związku z tym, znowuż kolejny odcinek inspiracyjny, typowo,
+[00:00:42.720 --> 00:00:45.880]   ale być może będziecie w stanie się z niego czegoś ciekawego nauczyć.
+[00:00:45.880 --> 00:00:46.960]   To tyle we wstępie.
+[00:00:46.960 --> 00:00:50.540]   Zachęcam Was do obejrzenia merytorycznej części dzisiejszego materiału.
+[00:00:56.420 --> 00:01:02.060]   No dobrze, moi drodzy, pierwsze pytanie dzisiaj zadał Sebastian Składny.
+[00:01:02.060 --> 00:01:07.620]   Zadał pytanie, jak sobie radzisz będąc właścicielem różnych spółek z pogodzeniem życia prywatnego?
+[00:01:07.620 --> 00:01:10.040]   Czy da się być dobrym rodzicem i dobrym prezesem?
+[00:01:10.040 --> 00:01:12.840]   I powiem Wam, że zastanawiałem się nad tym pytaniem przed nagraniem,
+[00:01:12.960 --> 00:01:19.540]   to coraz częściej z mojej perspektywy chodzi w życiu nie o work-life balance,
+[00:01:19.540 --> 00:01:21.400]   tylko o work-life integration.
+[00:01:21.400 --> 00:01:26.560]   To znaczy, ja trochę nie jestem w stanie uwierzyć w koncept pracowania od 8 do 16,
+[00:01:26.560 --> 00:01:27.800]   a potem niepracowania.
+[00:01:27.800 --> 00:01:32.700]   Albo w kontekście, jeżeli na przykład moje spółki mają niższy sezon,
+[00:01:32.700 --> 00:01:37.940]   czyli na przykład wakacje, pracowania, nie wiem, 8, 14, a potem niepracowania, znowuż.
+[00:01:37.940 --> 00:01:43.380]   Nie potrafię na przykład jako właściciel po prostu żyć w takim, nazwijmy to, układzie,
+[00:01:43.380 --> 00:01:45.800]   w którym od tej do tej pracuję, a potem już nie pracuję,
+[00:01:45.800 --> 00:01:47.400]   bo to mi po prostu zwyczajnie nie działa.
+[00:01:47.400 --> 00:01:51.620]   Jednocześnie uczę się integrować życie prywatne z zawodowym,
+[00:01:51.620 --> 00:01:55.460]   czyli na przykład co roku na 2-3 miesiące wyjeżdżam w różne miejsca świata,
+[00:01:55.460 --> 00:01:57.900]   ale z nich pracuję, tam na miejscu, po prostu.
+[00:01:57.900 --> 00:02:01.640]   Zdarza się też, że na przykład niektóre dni po prostu przychodzę do pracy,
+[00:02:01.640 --> 00:02:04.500]   rozglądam się, nie mam nic do robienia i wychodzę o godzinie 10
+[00:02:04.500 --> 00:02:07.920]   i spędzam dzień na przykład z dziećmi, gdzieś krążę po mieście,
+[00:02:07.940 --> 00:02:11.820]   bawię się samochodami, które bardzo lubię i robię inne, różne fajne rzeczy.
+[00:02:11.820 --> 00:02:14.100]   A w niektóre dni, jak na przykład jest cięższy okres,
+[00:02:14.100 --> 00:02:17.100]   przychodzę do pracy o godzinie 6, wychodzę o godzinie 22.30,
+[00:02:17.100 --> 00:02:19.020]   bo tak trzeba w danej chwili.
+[00:02:19.020 --> 00:02:22.100]   W związku z tym przestałem żyć zastanawiając się,
+[00:02:22.100 --> 00:02:27.020]   czy mój work-life balance jest dostatecznie dobry,
+[00:02:27.020 --> 00:02:29.820]   a zacząłem żyć po prostu zastanawiając się,
+[00:02:29.820 --> 00:02:33.660]   czy mój life, a nie sam work-life balance jest ok.

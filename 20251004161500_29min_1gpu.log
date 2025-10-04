@@ -1,0 +1,1419 @@
+whisper_init_from_file_with_params_no_state: loading model from 'models/ggml-large-v3-turbo-q5_0.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.011 sec
+ggml_metal_device_init: GPU name:   Apple M1
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51866
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1280
+whisper_model_load: n_audio_head  = 20
+whisper_model_load: n_audio_layer = 32
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1280
+whisper_model_load: n_text_head   = 20
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 128
+whisper_model_load: ftype         = 8
+whisper_model_load: qntvr         = 2
+whisper_model_load: type          = 5 (large v3)
+whisper_model_load: adding 1609 extra tokens
+whisper_model_load: n_langs       = 100
+whisper_model_load:        Metal total size =   573.40 MB
+whisper_model_load: model size    =  573.40 MB
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: use bfloat         = true
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   10.49 MB
+whisper_init_state: kv cross size =   31.46 MB
+whisper_init_state: kv pad  size  =    7.86 MB
+whisper_init_state: compute buffer (conv)   =   37.69 MB
+whisper_init_state: compute buffer (encode) =   55.35 MB
+whisper_init_state: compute buffer (cross)  =   24.63 MB
+whisper_init_state: compute buffer (decode) =  100.04 MB
+
+system_info: n_threads = 4 / 8 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/aleksander/Downloads/nagrania2/20251002_x34-JKlSjgo_Czy_da_si_by_dobrym_RODZICEM_i_jednoczenie_dobrym_.wav' (27798187 samples, 1737.4 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = pl, task = transcribe, timestamps = 1 ...
+
+
+[00:00:00.000 --> 00:00:03.100]   Czyli mówiłem jakiemuś klientowi, że słuchaj, już będę musiał mniej do Ciebie przyjeżdżać.
+[00:00:03.100 --> 00:00:07.740]   On mówił, no weź, Szymon, no, no weź, zostań, no.
+[00:00:07.740 --> 00:00:10.340]   A ja mówiłem, no dobra i zostawałem.
+[00:00:10.340 --> 00:00:15.940]   Cześć, witajcie, witam Was serdecznie w kolejnym odcinku programu Wise Business School.
+[00:00:15.940 --> 00:00:19.680]   W nietypowym odcinku, bo w odcinku, który jest po prostu Q&A-em.
+[00:00:19.680 --> 00:00:24.860]   I teraz uwaga, dla osób należących do grupy Nowoczesna Sprzedaż i Marketing w B2B,
+[00:00:24.860 --> 00:00:26.420]   tą grupę widzicie gdzieś tutaj.
+[00:00:26.420 --> 00:00:30.220]   Jeżeli jeszcze nie jesteście na Facebooku do niej zapisani, to koniecznie się zapiszcie.
+[00:00:30.220 --> 00:00:36.180]   Urządziłem Q&A, czyli powiedziałem, zadajcie pytania, a na kanale Wam na nie odpowiem.
+[00:00:36.180 --> 00:00:39.660]   Wy zadaliście, a teraz ja będę odpowiadał.
+[00:00:39.660 --> 00:00:42.720]   W związku z tym, znowuż kolejny odcinek inspiracyjny, typowo,
+[00:00:42.720 --> 00:00:45.880]   ale być może będziecie w stanie się z niego czegoś ciekawego nauczyć.
+[00:00:45.880 --> 00:00:46.960]   To tyle we wstępie.
+[00:00:46.960 --> 00:00:50.540]   Zachęcam Was do obejrzenia merytorycznej części dzisiejszego materiału.
+[00:00:56.420 --> 00:01:02.060]   No dobrze, moi drodzy, pierwsze pytanie dzisiaj zadał Sebastian Składny.
+[00:01:02.060 --> 00:01:07.620]   Zadał pytanie, jak sobie radzisz będąc właścicielem różnych spółek z pogodzeniem życia prywatnego?
+[00:01:07.620 --> 00:01:10.040]   Czy da się być dobrym rodzicem i dobrym prezesem?
+[00:01:10.040 --> 00:01:12.840]   I powiem Wam, że zastanawiałem się nad tym pytaniem przed nagraniem,
+[00:01:12.960 --> 00:01:19.540]   to coraz częściej z mojej perspektywy chodzi w życiu nie o work-life balance,
+[00:01:19.540 --> 00:01:21.400]   tylko o work-life integration.
+[00:01:21.400 --> 00:01:26.560]   To znaczy, ja trochę nie jestem w stanie uwierzyć w koncept pracowania od 8 do 16,
+[00:01:26.560 --> 00:01:27.800]   a potem niepracowania.
+[00:01:27.800 --> 00:01:32.700]   Albo w kontekście, jeżeli na przykład moje spółki mają niższy sezon,
+[00:01:32.700 --> 00:01:37.940]   czyli na przykład wakacje, pracowania, nie wiem, 8, 14, a potem niepracowania, znowuż.
+[00:01:37.940 --> 00:01:43.380]   Nie potrafię na przykład jako właściciel po prostu żyć w takim, nazwijmy to, układzie,
+[00:01:43.380 --> 00:01:45.800]   w którym od tej do tej pracuję, a potem już nie pracuję,
+[00:01:45.800 --> 00:01:47.400]   bo to mi po prostu zwyczajnie nie działa.
+[00:01:47.400 --> 00:01:51.620]   Jednocześnie uczę się integrować życie prywatne z zawodowym,
+[00:01:51.620 --> 00:01:55.460]   czyli na przykład co roku na 2-3 miesiące wyjeżdżam w różne miejsca świata,
+[00:01:55.460 --> 00:01:57.900]   ale z nich pracuję, tam na miejscu, po prostu.
+[00:01:57.900 --> 00:02:01.640]   Zdarza się też, że na przykład niektóre dni po prostu przychodzę do pracy,
+[00:02:01.640 --> 00:02:04.500]   rozglądam się, nie mam nic do robienia i wychodzę o godzinie 10
+[00:02:04.500 --> 00:02:07.920]   i spędzam dzień na przykład z dziećmi, gdzieś krążę po mieście,
+[00:02:07.940 --> 00:02:11.820]   bawię się samochodami, które bardzo lubię i robię inne, różne fajne rzeczy.
+[00:02:11.820 --> 00:02:14.100]   A w niektóre dni, jak na przykład jest cięższy okres,
+[00:02:14.100 --> 00:02:17.100]   przychodzę do pracy o godzinie 6, wychodzę o godzinie 22.30,
+[00:02:17.100 --> 00:02:19.020]   bo tak trzeba w danej chwili.
+[00:02:19.020 --> 00:02:22.100]   W związku z tym przestałem żyć zastanawiając się,
+[00:02:22.100 --> 00:02:27.020]   czy mój work-life balance jest dostatecznie dobry,
+[00:02:27.020 --> 00:02:29.820]   a zacząłem żyć po prostu zastanawiając się,
+[00:02:29.820 --> 00:02:33.660]   czy mój life, a nie sam work-life balance jest ok.
+[00:02:33.660 --> 00:02:37.180]   Jeżeli moje życie jest w porządku i takie oceniam,
+[00:02:37.180 --> 00:02:38.920]   to po prostu nic nie zmieniam.
+[00:02:38.920 --> 00:02:41.180]   A jeżeli dochodzę do wniosku, że coś jest nie w porządku,
+[00:02:41.180 --> 00:02:43.120]   czegoś jest za dużo w tym moim życiu,
+[00:02:43.120 --> 00:02:46.720]   to podejmuję jakieś decyzje, które mają za zadanie to zmienić.
+[00:02:46.720 --> 00:02:49.540]   Na przykład w ostatnich miesiącach do firmy dołączyła,
+[00:02:49.540 --> 00:02:52.280]   dołączyła dokładnie rzecz biorąc, nowa dyrektorka finansowa,
+[00:02:52.740 --> 00:02:55.660]   bo znalazłem w moim życiu zawodowym taki obszar,
+[00:02:55.660 --> 00:02:57.100]   w którym nie wnoszę już wartości,
+[00:02:57.100 --> 00:02:59.780]   to znaczy robienie przelewów, przeglądanie umów,
+[00:02:59.780 --> 00:03:03.180]   liczenie cash flow, kontroling podstawowy wszystkich firm.
+[00:03:03.180 --> 00:03:05.720]   Ja jako ja już nie wnoszę tam wartości,
+[00:03:05.720 --> 00:03:06.980]   zajmuje mi to bardzo dużo czasu,
+[00:03:06.980 --> 00:03:08.440]   dlatego też zatrudniłem kogoś,
+[00:03:08.440 --> 00:03:10.280]   kto po prostu tę funkcję przejmie.
+[00:03:10.280 --> 00:03:12.280]   Więc odpowiedź brzmi,
+[00:03:12.280 --> 00:03:14.260]   nie wierzę w work-life balance,
+[00:03:14.260 --> 00:03:15.580]   wierzę w work-life integration.
+[00:03:15.580 --> 00:03:18.480]   Jeszcze nigdy dotąd wcześniej w życiu
+[00:03:18.480 --> 00:03:20.000]   nie spędzałem więcej czasu z dziećmi,
+[00:03:20.920 --> 00:03:22.980]   więc to integrowanie jednego z drugim
+[00:03:22.980 --> 00:03:24.460]   idzie mi naprawdę świetnie.
+[00:03:24.460 --> 00:03:25.760]   Chyba.
+[00:03:25.760 --> 00:03:28.460]   Ale to zapytacie mnie za parę lat,
+[00:03:28.460 --> 00:03:29.320]   to będę wiedział więcej.
+[00:03:29.320 --> 00:03:33.080]   Bardzo fajne pytanie zadał Mateusz Włodarczyk.
+[00:03:33.080 --> 00:03:34.940]   Po czym poznać, że usługa w firmie
+[00:03:34.940 --> 00:03:37.120]   jest zbyt droga lub zbyt tania?
+[00:03:37.120 --> 00:03:38.780]   Czy są jakieś konkretne sygnały,
+[00:03:38.780 --> 00:03:40.140]   po czym można to rozpoznać?
+[00:03:40.140 --> 00:03:43.860]   Generalnie ciężko o jedną uniwersalną metodę,
+[00:03:43.860 --> 00:03:45.280]   która pomoże Ci to określić.
+[00:03:45.280 --> 00:03:47.460]   Niemniej to w jaki sposób my to robimy
+[00:03:47.460 --> 00:03:48.800]   w naszych własnych firmach,
+[00:03:48.800 --> 00:03:50.880]   to robimy zastanawiając się,
+[00:03:50.920 --> 00:03:53.040]   jak drogi problem rozwiązujemy.
+[00:03:53.040 --> 00:03:55.880]   I tutaj dobrym przykładem jest usługa rekrutacyjna.
+[00:03:55.880 --> 00:03:57.300]   Postaram się to narysować.
+[00:03:57.300 --> 00:03:58.620]   To znaczy,
+[00:03:58.620 --> 00:04:00.460]   nasza usługa rekrutacyjna
+[00:04:00.460 --> 00:04:02.540]   kosztuje powiedzmy około
+[00:04:02.540 --> 00:04:05.040]   17 tysięcy złotych,
+[00:04:05.040 --> 00:04:06.560]   jeżeli mówimy o handlowcu.
+[00:04:06.560 --> 00:04:08.220]   To bywa 2-3-4 tysiące więcej
+[00:04:08.220 --> 00:04:09.820]   lub 2-3-4 tysiące mniej,
+[00:04:09.820 --> 00:04:11.240]   w zależności od tego,
+[00:04:11.240 --> 00:04:13.240]   jaki jest to człowiek.
+[00:04:13.240 --> 00:04:13.840]   I teraz uwaga.
+[00:04:13.840 --> 00:04:15.600]   Dlaczego ta cena jest taka?
+[00:04:15.600 --> 00:04:16.700]   Ona jest taka dlatego,
+[00:04:16.700 --> 00:04:20.300]   że wartość pierwsza,
+[00:04:20.300 --> 00:04:22.040]   którą mamy w naszym procesie
+[00:04:22.040 --> 00:04:22.880]   jest bardzo cenna.
+[00:04:22.880 --> 00:04:24.700]   To znaczy konsultant
+[00:04:24.700 --> 00:04:28.680]   z SellWise
+[00:04:28.680 --> 00:04:30.540]   sprawdza kompetencje kandydatów
+[00:04:30.540 --> 00:04:31.220]   w HireWise.
+[00:04:31.220 --> 00:04:32.320]   Czyli jeżeli ktoś chce
+[00:04:32.320 --> 00:04:33.680]   zatrudnić handlowca,
+[00:04:33.680 --> 00:04:35.980]   który świetnie potrafi prospecting,
+[00:04:36.340 --> 00:04:37.120]   to my nie pytamy go
+[00:04:37.120 --> 00:04:38.820]   świetnie pan potrafi prospecting,
+[00:04:38.820 --> 00:04:39.400]   a on mówi no,
+[00:04:39.400 --> 00:04:41.720]   a my podsyłamy kandydata klientowi,
+[00:04:41.720 --> 00:04:44.520]   tylko mówimy to pokaż jak robisz.
+[00:04:44.520 --> 00:04:45.920]   Konsultant mówi pokaż mi to,
+[00:04:45.920 --> 00:04:46.620]   jak robisz,
+[00:04:46.620 --> 00:04:47.420]   a jak piszesz maile,
+[00:04:47.420 --> 00:04:48.220]   a jak dzwonisz.
+[00:04:48.220 --> 00:04:49.660]   Czyli merytorycznie jest w stanie
+[00:04:49.660 --> 00:04:50.680]   sprawdzić tego kandydata
+[00:04:50.680 --> 00:04:51.900]   zanim on wyjdzie do klienta.
+[00:04:51.900 --> 00:04:53.800]   I teraz to jest świetna,
+[00:04:53.800 --> 00:04:54.880]   cudowna wartość,
+[00:04:54.880 --> 00:04:57.780]   ale ona jest bardzo droga,
+[00:04:57.780 --> 00:04:58.860]   dla nas bardzo droga,
+[00:04:58.860 --> 00:05:00.140]   dlatego, że konsultant
+[00:05:00.140 --> 00:05:00.920]   siłą rzeczy
+[00:05:00.920 --> 00:05:01.880]   to człowiek,
+[00:05:01.880 --> 00:05:03.580]   który bierze bardzo dużo pieniędzy.
+[00:05:04.080 --> 00:05:06.180]   W związku z tym duży procent
+[00:05:06.180 --> 00:05:08.800]   kwoty, którą pobieramy u klienta,
+[00:05:08.800 --> 00:05:11.560]   rzeczywiście idzie na konsultanta
+[00:05:11.560 --> 00:05:12.780]   i na ten proces
+[00:05:12.780 --> 00:05:14.320]   sprawdzenia kompetencji.
+[00:05:14.320 --> 00:05:17.660]   Do tego jest wartość druga,
+[00:05:17.660 --> 00:05:20.700]   czyli źródło.
+[00:05:20.700 --> 00:05:22.880]   I teraz uwaga.
+[00:05:22.880 --> 00:05:24.800]   Naszym źródłem kandydatów
+[00:05:24.800 --> 00:05:25.320]   jest podcast,
+[00:05:25.320 --> 00:05:26.500]   jest ten kanał na YouTubie,
+[00:05:26.500 --> 00:05:28.220]   jest bardzo dużo aktywności marketingowych,
+[00:05:28.220 --> 00:05:29.020]   które co do zasady
+[00:05:29.020 --> 00:05:32.100]   są po prostu drogie.
+[00:05:32.100 --> 00:05:33.900]   Tutaj za kamerą siedzi
+[00:05:33.900 --> 00:05:34.500]   montażysta.
+[00:05:34.500 --> 00:05:35.900]   Człowiek bierze tyle hajsu,
+[00:05:35.900 --> 00:05:37.220]   że po prostu głowa mała.
+[00:05:37.220 --> 00:05:43.040]   Śmieję się teraz trochę,
+[00:05:43.040 --> 00:05:43.960]   ale naprawdę tak jest,
+[00:05:43.960 --> 00:05:44.740]   musicie mi uwierzyć.
+[00:05:44.740 --> 00:05:47.820]   I do tego robimy podcast,
+[00:05:47.820 --> 00:05:49.080]   do tego robimy stronę internetową,
+[00:05:49.080 --> 00:05:49.700]   to wszystko wymaga
+[00:05:49.700 --> 00:05:51.920]   działu marketingu.
+[00:05:51.920 --> 00:05:53.020]   Do tego jeszcze
+[00:05:53.020 --> 00:05:54.140]   wszyscy nasi rekruterzy
+[00:05:54.140 --> 00:05:54.800]   na przykład robią
+[00:05:54.800 --> 00:05:55.820]   searching aktywny.
+[00:05:55.820 --> 00:05:57.260]   Musieli się nauczyć to robić.
+[00:05:57.260 --> 00:05:58.160]   To też trwa,
+[00:05:58.160 --> 00:05:59.720]   za ten czas trzeba zapłacić.
+[00:05:59.720 --> 00:06:00.740]   I okazuje się,
+[00:06:00.740 --> 00:06:02.580]   że drugi bardzo duży
+[00:06:02.580 --> 00:06:05.400]   procent tego wynagrodzenia,
+[00:06:05.400 --> 00:06:06.040]   który pobieramy,
+[00:06:06.040 --> 00:06:06.700]   to jest koszt
+[00:06:06.700 --> 00:06:08.200]   pozyskania samych kandydatów.
+[00:06:08.200 --> 00:06:09.580]   Tutaj nawet można policzyć,
+[00:06:09.580 --> 00:06:10.300]   że samo ogłoszenie
+[00:06:10.300 --> 00:06:12.080]   na popularnych portalach
+[00:06:12.080 --> 00:06:12.840]   od pracy
+[00:06:12.840 --> 00:06:14.000]   kosztuje co najmniej
+[00:06:14.000 --> 00:06:15.180]   kilkaset złotych,
+[00:06:15.180 --> 00:06:16.480]   a łącznie jeżeli je wszystkie
+[00:06:16.480 --> 00:06:17.840]   zliczymy to grubo ponad tysiąc
+[00:06:17.840 --> 00:06:18.760]   z całej rekrutacji.
+[00:06:18.760 --> 00:06:19.860]   I teraz uwaga,
+[00:06:19.860 --> 00:06:21.080]   fajnie,
+[00:06:21.080 --> 00:06:24.140]   że to tyle kosztuje.
+[00:06:24.140 --> 00:06:24.700]   W sensie takim,
+[00:06:24.700 --> 00:06:25.800]   że mogłem sobie to policzyć
+[00:06:25.800 --> 00:06:26.980]   odorganizacyjnie.
+[00:06:26.980 --> 00:06:27.800]   Tyle mi wyszło,
+[00:06:27.800 --> 00:06:29.140]   że musi to kosztować,
+[00:06:29.140 --> 00:06:30.100]   żeby miało to sens.
+[00:06:30.100 --> 00:06:31.820]   Ale teraz muszę to odbić
+[00:06:31.820 --> 00:06:32.420]   w rynku
+[00:06:32.420 --> 00:06:33.400]   i sobie zadać pytanie,
+[00:06:33.400 --> 00:06:35.200]   czy to jest za dużo,
+[00:06:35.200 --> 00:06:36.040]   czy za mało.
+[00:06:36.040 --> 00:06:37.860]   No i zadaliśmy sobie to pytanie.
+[00:06:37.860 --> 00:06:38.660]   I się okazuje,
+[00:06:38.660 --> 00:06:40.860]   że rotacja jednego takiego kandydata
+[00:06:40.860 --> 00:06:42.180]   to jest około 100 tysięcy,
+[00:06:42.180 --> 00:06:43.980]   tam jest dziewięćdziesiąt kilka tysięcy
+[00:06:43.980 --> 00:06:45.760]   to jest koszt rotacji
+[00:06:45.760 --> 00:06:48.080]   jednego błędnie zatrudnionego handlowca.
+[00:06:48.080 --> 00:06:49.460]   I teraz jeżeli
+[00:06:49.460 --> 00:06:51.820]   ten współczynnik ceny
+[00:06:51.820 --> 00:06:53.020]   do potencjalnej straty
+[00:06:53.020 --> 00:06:55.260]   to jest raptem 17%,
+[00:06:55.260 --> 00:06:56.580]   to możemy uznać,
+[00:06:56.580 --> 00:06:58.240]   że w sumie
+[00:06:58.240 --> 00:06:58.780]   to ta usługa
+[00:06:58.780 --> 00:06:59.880]   to może nawet jest za tania.
+[00:06:59.880 --> 00:07:01.180]   Jak się firma rozwinie,
+[00:07:01.180 --> 00:07:02.620]   to być może te ceny zwiększymy,
+[00:07:02.620 --> 00:07:03.400]   bo się okazuje,
+[00:07:03.400 --> 00:07:05.080]   że współczynnik jednego do drugiego
+[00:07:05.080 --> 00:07:06.740]   jest naprawdę w porządku.
+[00:07:06.740 --> 00:07:08.060]   I teraz podobnie jest
+[00:07:08.060 --> 00:07:08.940]   w waszych biznesach.
+[00:07:08.940 --> 00:07:10.260]   Fajnie jest policzyć,
+[00:07:10.260 --> 00:07:11.480]   ile wasza usługa
+[00:07:11.480 --> 00:07:13.280]   wnosi realnie do organizacji
+[00:07:13.280 --> 00:07:14.980]   korzyści na poziomie biznesowym
+[00:07:14.980 --> 00:07:17.800]   i zestawienie tego z waszą ceną.
+[00:07:17.800 --> 00:07:19.260]   Oprócz tego oczywiście
+[00:07:19.260 --> 00:07:21.300]   nie możecie zapominać
+[00:07:21.300 --> 00:07:22.960]   o benchmarkowaniu się do rynku.
+[00:07:22.960 --> 00:07:24.000]   No bo rynek
+[00:07:24.000 --> 00:07:26.460]   na przykład w kontekście handlowców
+[00:07:26.460 --> 00:07:27.180]   są firmy,
+[00:07:27.180 --> 00:07:28.200]   które pewnie zrekrutują
+[00:07:28.200 --> 00:07:29.540]   handlowca i za 8 tysięcy,
+[00:07:29.540 --> 00:07:31.020]   a może za 10,
+[00:07:31.020 --> 00:07:32.040]   a może za 12.
+[00:07:32.040 --> 00:07:33.760]   I oczywiście nie możemy też
+[00:07:33.760 --> 00:07:34.940]   zaproponować ceny,
+[00:07:34.940 --> 00:07:35.840]   która jest, nie wiem,
+[00:07:35.840 --> 00:07:37.100]   pięciokrotnie wyższa od nich,
+[00:07:37.100 --> 00:07:38.020]   bo nie możemy się aż tak
+[00:07:38.020 --> 00:07:38.800]   oderwać od rynku.
+[00:07:39.380 --> 00:07:41.080]   musimy pamiętać, że ta wartość 1
+[00:07:41.080 --> 00:07:42.000]   i ta wartość 2
+[00:07:42.000 --> 00:07:44.180]   są warte określoną sumę pieniędzy
+[00:07:44.180 --> 00:07:46.440]   i wyszło nam, że akurat taką.
+[00:07:46.440 --> 00:07:47.140]   I teraz
+[00:07:47.140 --> 00:07:49.460]   cenniki podlegają testom.
+[00:07:49.460 --> 00:07:50.620]   Powinniście sprawdzać,
+[00:07:50.620 --> 00:07:51.640]   jak wasi klienci reagują
+[00:07:51.640 --> 00:07:52.180]   na te ceny
+[00:07:52.180 --> 00:07:53.340]   i jaki ma to wpływ
+[00:07:53.340 --> 00:07:54.120]   na zamykanie się
+[00:07:54.120 --> 00:07:55.180]   poszczególnych transakcji.
+[00:07:55.180 --> 00:07:56.840]   No i cóż,
+[00:07:56.840 --> 00:07:57.740]   mam nadzieję,
+[00:07:57.960 --> 00:07:58.960]   że wyciągasz z tego
+[00:07:58.960 --> 00:08:00.620]   Mateuszu
+[00:08:00.620 --> 00:08:01.680]   jakąś inspirację
+[00:08:01.680 --> 00:08:02.540]   i że jest to odpowiedź
+[00:08:02.540 --> 00:08:03.180]   na twoje pytanie.
+[00:08:03.180 --> 00:08:05.020]   Mateusz zadał też drugie pytanie.
+[00:08:05.020 --> 00:08:06.480]   Czy większą frajdę
+[00:08:06.480 --> 00:08:07.780]   daje RS6 czy R8?
+[00:08:07.780 --> 00:08:10.380]   Mówimy o dwóch modelach Audi
+[00:08:10.380 --> 00:08:12.280]   i muszę wam powiedzieć,
+[00:08:12.280 --> 00:08:14.040]   że to jest bardzo trudne pytanie,
+[00:08:14.040 --> 00:08:14.620]   bo nie wiem.
+[00:08:14.620 --> 00:08:17.240]   RS6 ma silnik z przodu,
+[00:08:17.240 --> 00:08:18.480]   ma silnik V8,
+[00:08:18.480 --> 00:08:19.580]   ma biturbo,
+[00:08:19.580 --> 00:08:20.840]   ma 1000 Nm
+[00:08:20.840 --> 00:08:22.000]   który ponad 600 KM
+[00:08:22.000 --> 00:08:23.380]   jeździ zupełnie inaczej
+[00:08:23.380 --> 00:08:23.900]   niż R8,
+[00:08:23.900 --> 00:08:25.520]   który ma silnik umieszczony centralnie.
+[00:08:25.520 --> 00:08:26.760]   Wolnoszący
+[00:08:26.760 --> 00:08:27.500]   to jest V10,
+[00:08:27.500 --> 00:08:28.380]   która się kręci
+[00:08:28.380 --> 00:08:30.740]   do około 8500 obrotów.
+[00:08:30.740 --> 00:08:31.640]   Bardzo dużo zyskuje
+[00:08:31.640 --> 00:08:32.740]   w górnych partiach obrotów.
+[00:08:32.740 --> 00:08:33.940]   Jest tylnionapędowa,
+[00:08:33.940 --> 00:08:35.960]   podczas gdy RS6 jest quattro.
+[00:08:35.960 --> 00:08:37.560]   One się różnią
+[00:08:37.560 --> 00:08:38.900]   praktycznie wszystkim.
+[00:08:38.900 --> 00:08:40.860]   Jeżeli idzie o jednak
+[00:08:40.860 --> 00:08:41.900]   frajdę z jazdy
+[00:08:41.900 --> 00:08:42.600]   na przykład na torze
+[00:08:42.600 --> 00:08:43.180]   i emocje,
+[00:08:43.180 --> 00:08:44.580]   no to zdecydowanie
+[00:08:44.580 --> 00:08:45.660]   R8 daje ich
+[00:08:45.660 --> 00:08:47.040]   kilkukrotnie więcej.
+[00:08:47.040 --> 00:08:47.980]   Wiem, że to nie było
+[00:08:47.980 --> 00:08:49.300]   pytanie związane ze sprzedażą,
+[00:08:49.300 --> 00:08:50.340]   ale pytanie związane
+[00:08:50.340 --> 00:08:50.660]   z czymś,
+[00:08:50.660 --> 00:08:51.680]   co jest dla mnie ważne.
+[00:08:51.680 --> 00:08:53.520]   Następne pytanie.
+[00:08:53.520 --> 00:08:54.520]   Karol zapytał.
+[00:08:54.520 --> 00:08:55.860]   Jako pasjonat procesów,
+[00:08:55.860 --> 00:08:57.600]   jakie procesy z biznesu
+[00:08:57.600 --> 00:08:58.360]   wdrożyłeś
+[00:08:58.360 --> 00:09:00.080]   i wdrażasz w życiu prywatnym?
+[00:09:00.080 --> 00:09:02.620]   Tak naprawdę tylko jeden,
+[00:09:02.620 --> 00:09:04.260]   czyli PDCA.
+[00:09:04.260 --> 00:09:06.680]   I teraz mam kilka dziedzin
+[00:09:06.680 --> 00:09:07.260]   mojego życia,
+[00:09:07.260 --> 00:09:09.740]   które mam w ten sposób
+[00:09:09.740 --> 00:09:11.160]   przeprowadzone,
+[00:09:11.160 --> 00:09:12.760]   czyli robię je tak jak biznesowo.
+[00:09:12.760 --> 00:09:15.160]   P to jest plan,
+[00:09:15.160 --> 00:09:17.140]   planuję sobie coś
+[00:09:17.140 --> 00:09:18.120]   i określam,
+[00:09:18.120 --> 00:09:18.600]   to jest ważne,
+[00:09:18.600 --> 00:09:19.380]   metryki,
+[00:09:19.760 --> 00:09:20.220]   czyli na przykład,
+[00:09:20.220 --> 00:09:20.660]   nie wiem,
+[00:09:20.660 --> 00:09:23.400]   będę ważył ileś tam.
+[00:09:23.400 --> 00:09:24.660]   To jest metryka.
+[00:09:24.660 --> 00:09:25.340]   Smutna,
+[00:09:25.340 --> 00:09:25.820]   a czy jednak.
+[00:09:25.820 --> 00:09:27.180]   Następnie do.
+[00:09:27.180 --> 00:09:28.100]   Idę to robić,
+[00:09:28.100 --> 00:09:29.160]   potem check.
+[00:09:30.340 --> 00:09:30.820]   sprawdzam,
+[00:09:30.820 --> 00:09:32.320]   czy rzeczywiście doszło do tego,
+[00:09:32.320 --> 00:09:33.960]   że te metryki są na oczekiwanym poziomie
+[00:09:33.960 --> 00:09:35.080]   i akt,
+[00:09:35.080 --> 00:09:35.980]   jeżeli nie,
+[00:09:35.980 --> 00:09:36.760]   to coś zmieniam.
+[00:09:36.760 --> 00:09:38.140]   I w kontekście na przykład
+[00:09:38.140 --> 00:09:39.520]   mojego odżywiania się
+[00:09:39.520 --> 00:09:40.140]   udało mi się
+[00:09:40.140 --> 00:09:41.700]   po 10 latach prób i błędów
+[00:09:41.700 --> 00:09:43.120]   znaleźć sposób odżywiania się,
+[00:09:43.120 --> 00:09:45.200]   który odpowiada temu,
+[00:09:45.200 --> 00:09:45.920]   w jaki sposób
+[00:09:45.920 --> 00:09:47.480]   funkcjonuję na co dzień,
+[00:09:47.480 --> 00:09:48.280]   jak pracuję,
+[00:09:48.280 --> 00:09:49.680]   gdzie bywam w hotelach,
+[00:09:49.680 --> 00:09:50.860]   jak często bywam.
+[00:09:50.860 --> 00:09:52.640]   Pudełka mi się nie sprawdziły,
+[00:09:52.640 --> 00:09:53.620]   samodzielone gotowanie
+[00:09:53.620 --> 00:09:54.600]   mi się nie sprawdziło,
+[00:09:55.060 --> 00:09:56.020]   jakieś odżywianie się
+[00:09:56.020 --> 00:09:57.620]   na rzeczach z Orlenu,
+[00:09:57.620 --> 00:09:58.580]   takich specjalnych,
+[00:09:58.580 --> 00:09:59.740]   bo tam niektóre są spoko,
+[00:09:59.740 --> 00:10:01.000]   też mi się nie sprawdziło,
+[00:10:01.000 --> 00:10:02.300]   bo nie zawsze Orlen był po drodze
+[00:10:02.300 --> 00:10:02.900]   i tak dalej,
+[00:10:02.900 --> 00:10:03.360]   i tak dalej.
+[00:10:03.360 --> 00:10:04.940]   I na przykład tym sposobem
+[00:10:04.940 --> 00:10:06.080]   po 10 latach
+[00:10:06.080 --> 00:10:07.400]   takiego latania w kółku,
+[00:10:07.400 --> 00:10:08.380]   chociaż w kółku latałem,
+[00:10:08.380 --> 00:10:09.040]   myślę, że krócej,
+[00:10:09.040 --> 00:10:10.000]   tak świadomie,
+[00:10:10.000 --> 00:10:12.500]   trafiłem na fasting,
+[00:10:12.500 --> 00:10:13.760]   intermittent fasting,
+[00:10:13.760 --> 00:10:16.240]   który jest świetny,
+[00:10:16.240 --> 00:10:16.820]   cudowny.
+[00:10:16.820 --> 00:10:18.280]   I właśnie to PDCA
+[00:10:18.280 --> 00:10:19.040]   w życiu prywatnym,
+[00:10:19.040 --> 00:10:20.540]   w takich ważnych dla mnie aspektach
+[00:10:20.540 --> 00:10:21.960]   działa mi bardzo, bardzo fajnie.
+[00:10:21.960 --> 00:10:22.340]   To jest coś,
+[00:10:22.340 --> 00:10:23.260]   co zaadoptowałem
+[00:10:23.260 --> 00:10:24.720]   typowo z biznesu
+[00:10:24.720 --> 00:10:26.040]   do życia prywatnego.
+[00:10:26.040 --> 00:10:27.400]   Kolejne pytanie.
+[00:10:27.400 --> 00:10:28.540]   I to jest pytanie
+[00:10:28.540 --> 00:10:29.300]   Macieja Szota,
+[00:10:29.300 --> 00:10:31.360]   które wprowadziło mnie
+[00:10:31.360 --> 00:10:33.360]   w długie rozmyślania.
+[00:10:33.360 --> 00:10:35.320]   Jak wygląda Twoje zaangażowanie
+[00:10:35.320 --> 00:10:36.200]   w różne projekty
+[00:10:36.200 --> 00:10:37.680]   i jak łączysz te obowiązki?
+[00:10:37.680 --> 00:10:39.180]   Jak wygląda Twoje zaangażowanie
+[00:10:39.180 --> 00:10:39.960]   jako prezes,
+[00:10:39.960 --> 00:10:40.520]   inwestor,
+[00:10:40.520 --> 00:10:42.480]   lider w różnych spółkach?
+[00:10:42.480 --> 00:10:44.520]   I to jest trudne pytanie,
+[00:10:44.520 --> 00:10:46.040]   bo w każdej spółce
+[00:10:46.040 --> 00:10:47.100]   wygląda nieco inaczej.
+[00:10:47.100 --> 00:10:48.080]   I teraz
+[00:10:48.080 --> 00:10:50.540]   dzielę te spółki
+[00:10:50.540 --> 00:10:52.700]   na takie trzy fazy,
+[00:10:52.700 --> 00:10:53.500]   które narysuję.
+[00:10:54.380 --> 00:10:55.160]   pierwsza,
+[00:10:55.160 --> 00:10:55.960]   druga i trzecia.
+[00:10:55.960 --> 00:10:57.200]   To szokujące.
+[00:10:58.200 --> 00:10:59.520]   pierwsza to jest walidacja
+[00:10:59.520 --> 00:11:02.300]   i mówię o walidacji
+[00:11:02.300 --> 00:11:03.200]   modelu biznesowego.
+[00:11:03.200 --> 00:11:04.260]   To znaczy sprawdzeniu,
+[00:11:04.260 --> 00:11:05.340]   czy aby na pewno
+[00:11:05.340 --> 00:11:06.480]   koncept dotarcia
+[00:11:06.480 --> 00:11:07.680]   do tego fragmentu rynku
+[00:11:07.680 --> 00:11:08.860]   z tymi wartościami,
+[00:11:08.860 --> 00:11:09.380]   które mamy,
+[00:11:09.380 --> 00:11:10.060]   w tych cenach,
+[00:11:10.060 --> 00:11:10.640]   które mamy,
+[00:11:10.640 --> 00:11:11.260]   w taki sposób,
+[00:11:11.260 --> 00:11:12.080]   w jaki wymyśliliśmy,
+[00:11:12.080 --> 00:11:13.380]   czy jest aby na pewno
+[00:11:13.380 --> 00:11:13.980]   sensowne.
+[00:11:13.980 --> 00:11:15.540]   To jest pierwszy etap.
+[00:11:15.540 --> 00:11:16.820]   Drugi etap
+[00:11:16.820 --> 00:11:18.920]   to jest budowa
+[00:11:18.920 --> 00:11:21.280]   kluczowych procesów
+[00:11:21.280 --> 00:11:22.340]   i też zespołu
+[00:11:22.340 --> 00:11:22.900]   tak naprawdę,
+[00:11:22.900 --> 00:11:23.980]   czyli jeżeli już mamy
+[00:11:23.980 --> 00:11:25.380]   zwalidowany model biznesowy,
+[00:11:25.380 --> 00:11:28.220]   to budujemy procesy
+[00:11:28.220 --> 00:11:29.880]   i później nazwę
+[00:11:29.880 --> 00:11:30.980]   ten trzeci etap
+[00:11:30.980 --> 00:11:31.940]   jako utrzymanie.
+[00:11:31.940 --> 00:11:33.100]   I teraz
+[00:11:33.100 --> 00:11:35.480]   generalnie
+[00:11:35.480 --> 00:11:36.040]   najbardziej
+[00:11:36.040 --> 00:11:37.700]   moje zaangażowanie
+[00:11:37.700 --> 00:11:38.600]   spada
+[00:11:38.600 --> 00:11:40.540]   wraz z tymi etapami.
+[00:11:40.540 --> 00:11:41.320]   To znaczy
+[00:11:41.320 --> 00:11:42.360]   najbardziej zaangażowany
+[00:11:42.360 --> 00:11:43.100]   jestem na etapie
+[00:11:43.100 --> 00:11:44.440]   walidacji modelu biznesowego
+[00:11:44.440 --> 00:11:45.640]   na tym początkowym etapie,
+[00:11:45.640 --> 00:11:46.880]   kiedy samodzielnie
+[00:11:46.880 --> 00:11:47.820]   rozmawiam z klientami,
+[00:11:47.820 --> 00:11:48.640]   sam sprawdzam,
+[00:11:48.640 --> 00:11:49.400]   czy koncept jest
+[00:11:49.400 --> 00:11:50.600]   sensowny, wartościowy.
+[00:11:50.600 --> 00:11:51.480]   Później
+[00:11:51.480 --> 00:11:52.880]   na etapie budowy procesów
+[00:11:52.880 --> 00:11:53.720]   jestem już znacznie
+[00:11:53.720 --> 00:11:54.460]   mniej zaangażowany
+[00:11:54.460 --> 00:11:55.340]   i na etapie utrzymania
+[00:11:55.340 --> 00:11:56.420]   pojawiam się w tych firmach
+[00:11:56.420 --> 00:11:57.040]   czy spółkach
+[00:11:57.040 --> 00:11:57.820]   tylko,
+[00:11:57.820 --> 00:11:59.060]   bo mówimy o moich firmach
+[00:11:59.060 --> 00:11:59.740]   i moich spółkach,
+[00:11:59.740 --> 00:12:00.240]   tylko wtedy,
+[00:12:00.240 --> 00:12:01.980]   kiedy coś się złego dzieje.
+[00:12:01.980 --> 00:12:02.680]   Jestem potrzebny
+[00:12:02.680 --> 00:12:03.440]   do tego, żeby pomóc.
+[00:12:03.440 --> 00:12:03.840]   Ale
+[00:12:03.840 --> 00:12:05.180]   ma to bardzo ważny
+[00:12:05.180 --> 00:12:05.860]   jeden czynnik,
+[00:12:06.040 --> 00:12:07.120]   każda z tych spółek,
+[00:12:07.120 --> 00:12:08.180]   które tworzę
+[00:12:08.180 --> 00:12:09.740]   ma od samego początku
+[00:12:09.740 --> 00:12:10.320]   osobę,
+[00:12:10.320 --> 00:12:11.840]   która operacyjnie
+[00:12:11.840 --> 00:12:12.880]   zajmuje się
+[00:12:12.880 --> 00:12:14.640]   ogarnianiem tej spółki
+[00:12:14.640 --> 00:12:16.940]   przez całe te trzy etapy.
+[00:12:16.940 --> 00:12:17.600]   I teraz
+[00:12:17.600 --> 00:12:18.700]   nie buduję firm,
+[00:12:18.700 --> 00:12:19.380]   w których
+[00:12:19.380 --> 00:12:20.560]   to ja operacyjnie
+[00:12:20.560 --> 00:12:21.980]   miałbym tym dowodzić,
+[00:12:21.980 --> 00:12:23.100]   odpowiadać za strategie
+[00:12:23.100 --> 00:12:23.620]   i tak dalej.
+[00:12:23.620 --> 00:12:25.100]   Buduję tylko i wyłącznie
+[00:12:25.100 --> 00:12:25.660]   organizacje,
+[00:12:25.660 --> 00:12:27.060]   w których jest tego typu osoba,
+[00:12:27.060 --> 00:12:28.240]   która po prostu
+[00:12:28.240 --> 00:12:29.080]   przejmie to ode mnie
+[00:12:29.080 --> 00:12:29.500]   i się tym
+[00:12:29.500 --> 00:12:30.640]   najzwyczajniej zajmie.
+[00:12:30.640 --> 00:12:31.840]   Uważam, że to jest lepsze
+[00:12:31.840 --> 00:12:32.400]   dla tych firm,
+[00:12:32.400 --> 00:12:33.200]   dla tych zespołów,
+[00:12:33.200 --> 00:12:34.240]   dla ludzi, którzy tam pracują.
+[00:12:34.240 --> 00:12:35.880]   Więc można powiedzieć,
+[00:12:36.040 --> 00:12:38.160]   że łączę te obowiązki
+[00:12:38.160 --> 00:12:38.780]   w taki sposób,
+[00:12:38.780 --> 00:12:39.360]   że na przykład
+[00:12:39.360 --> 00:12:42.280]   na początku powstało
+[00:12:42.280 --> 00:12:42.880]   SellWise,
+[00:12:42.880 --> 00:12:44.260]   później
+[00:12:44.260 --> 00:12:45.600]   powstała
+[00:12:45.600 --> 00:12:46.220]   rekrutacja
+[00:12:46.220 --> 00:12:46.860]   wtedy jeszcze,
+[00:12:46.860 --> 00:12:49.120]   potem zaczęła
+[00:12:49.120 --> 00:12:50.320]   powstawać
+[00:12:50.320 --> 00:12:50.920]   Akademia,
+[00:12:52.200 --> 00:12:53.820]   a potem
+[00:12:53.820 --> 00:12:55.880]   zaczął powstawać
+[00:12:55.880 --> 00:12:56.380]   AdWise.
+[00:12:56.380 --> 00:12:57.220]   I teraz
+[00:12:57.220 --> 00:12:58.060]   za każdym razem,
+[00:12:58.060 --> 00:12:58.780]   kiedy pojawiał się
+[00:12:58.780 --> 00:12:59.600]   kolejny projekt,
+[00:12:59.600 --> 00:13:00.380]   to
+[00:13:00.380 --> 00:13:01.340]   w poprzednim
+[00:13:01.340 --> 00:13:01.860]   byłem już
+[00:13:01.860 --> 00:13:02.700]   albo na końcu
+[00:13:02.700 --> 00:13:03.540]   fazy procesów,
+[00:13:03.540 --> 00:13:04.840]   albo już
+[00:13:04.840 --> 00:13:05.940]   wchodziałem w utrzymanie,
+[00:13:05.940 --> 00:13:07.000]   a nawet to nazwę
+[00:13:07.000 --> 00:13:08.120]   utrzymanie i rozwój,
+[00:13:08.120 --> 00:13:09.700]   bo do tego
+[00:13:09.700 --> 00:13:10.380]   się to
+[00:13:10.380 --> 00:13:11.340]   sprowadza.
+[00:13:11.340 --> 00:13:13.340]   Więc
+[00:13:13.340 --> 00:13:14.080]   za każdym razem,
+[00:13:14.080 --> 00:13:14.400]   jak już
+[00:13:14.400 --> 00:13:15.840]   otwieraliśmy rekrutację,
+[00:13:16.840 --> 00:13:17.340]   to SellWise
+[00:13:17.340 --> 00:13:18.520]   było sprocesowane
+[00:13:18.520 --> 00:13:19.440]   i już fajnie działało.
+[00:13:19.440 --> 00:13:20.480]   Jak już rekrutacja
+[00:13:20.480 --> 00:13:21.180]   zaczęła działać,
+[00:13:21.180 --> 00:13:21.940]   wtedy zaangażowałem się
+[00:13:21.940 --> 00:13:22.440]   w Akademię,
+[00:13:22.440 --> 00:13:23.100]   jak już Akademia
+[00:13:23.100 --> 00:13:24.100]   ruszyła i się sprzedała,
+[00:13:24.100 --> 00:13:24.460]   to wtedy
+[00:13:24.460 --> 00:13:25.600]   zaangażowałem się
+[00:13:25.600 --> 00:13:26.060]   w AdWise.
+[00:13:26.060 --> 00:13:27.200]   I teraz
+[00:13:27.200 --> 00:13:27.780]   teoretycznie
+[00:13:27.780 --> 00:13:28.160]   czysto
+[00:13:28.160 --> 00:13:29.080]   w SellWise
+[00:13:29.080 --> 00:13:30.600]   bywam rzadko,
+[00:13:30.600 --> 00:13:31.220]   mam na myśli
+[00:13:31.220 --> 00:13:32.160]   operacje oczywiście,
+[00:13:32.160 --> 00:13:33.200]   w rekrutacji
+[00:13:33.200 --> 00:13:33.660]   już praktycznie
+[00:13:33.660 --> 00:13:34.060]   w ogóle,
+[00:13:34.060 --> 00:13:34.620]   bo tam wszystko
+[00:13:34.620 --> 00:13:35.240]   pięknie działa.
+[00:13:35.240 --> 00:13:36.100]   W Akademii
+[00:13:36.100 --> 00:13:36.400]   oczywiście
+[00:13:36.400 --> 00:13:37.060]   prowadzę
+[00:13:37.060 --> 00:13:38.060]   kierunki,
+[00:13:38.060 --> 00:13:38.940]   ale programy
+[00:13:38.940 --> 00:13:39.620]   są stworzone,
+[00:13:39.620 --> 00:13:40.360]   działają,
+[00:13:40.360 --> 00:13:41.380]   wiemy jak
+[00:13:41.380 --> 00:13:41.820]   te kierunki
+[00:13:41.820 --> 00:13:42.380]   sprzedawać.
+[00:13:42.840 --> 00:13:43.440]   No i obecnie
+[00:13:43.440 --> 00:13:44.240]   najwięcej czasu
+[00:13:44.240 --> 00:13:45.080]   spędza mi AdWise
+[00:13:45.080 --> 00:13:46.480]   i jestem w AdWise
+[00:13:46.480 --> 00:13:47.060]   w fazie
+[00:13:47.060 --> 00:13:47.900]   drugiej
+[00:13:47.900 --> 00:13:49.040]   budowania procesów.
+[00:13:49.040 --> 00:13:50.120]   Liczę Macieju,
+[00:13:50.120 --> 00:13:50.700]   że Ci to
+[00:13:50.700 --> 00:13:52.120]   na Twoje pytanie
+[00:13:52.120 --> 00:13:53.100]   odpowiada.
+[00:13:53.100 --> 00:13:54.240]   Idźmy dalej,
+[00:13:54.240 --> 00:13:55.700]   bo kolejna osoba
+[00:13:55.700 --> 00:13:57.400]   to Emil.
+[00:13:57.400 --> 00:13:58.440]   Emil Patryk.
+[00:13:58.440 --> 00:13:59.540]   Patyk,
+[00:13:59.540 --> 00:13:59.980]   przepraszam.
+[00:13:59.980 --> 00:14:00.740]   Emil Patyk.
+[00:14:00.740 --> 00:14:02.360]   Jak dużo pracowałeś
+[00:14:02.360 --> 00:14:02.800]   w ciągu dnia
+[00:14:02.800 --> 00:14:03.680]   nad rozwojem SellWise
+[00:14:03.680 --> 00:14:04.800]   przy jednoczesnym etacie?
+[00:14:04.800 --> 00:14:05.720]   Ogólnie pisząc,
+[00:14:05.720 --> 00:14:07.360]   jak wyglądały te początki?
+[00:14:07.360 --> 00:14:10.060]   To jest smutne pytanie.
+[00:14:10.840 --> 00:14:11.720]   To znaczy
+[00:14:11.720 --> 00:14:14.440]   dużo pracowałem
+[00:14:14.440 --> 00:14:16.240]   i to było
+[00:14:16.240 --> 00:14:17.540]   może nawet zbyt dużo.
+[00:14:17.540 --> 00:14:19.420]   Myślę, że
+[00:14:19.420 --> 00:14:20.280]   inaczej,
+[00:14:20.280 --> 00:14:21.080]   każdą sobotę
+[00:14:21.080 --> 00:14:21.780]   zawsze całą
+[00:14:21.780 --> 00:14:22.680]   siedziałem w kawiarni
+[00:14:22.680 --> 00:14:23.400]   i pracowałem.
+[00:14:23.400 --> 00:14:25.000]   I to było moje jakby
+[00:14:25.000 --> 00:14:26.400]   takie wręcz
+[00:14:26.400 --> 00:14:27.080]   przyzwyczajenie.
+[00:14:27.080 --> 00:14:27.840]   Niedziela
+[00:14:27.840 --> 00:14:28.940]   efektywnie też
+[00:14:28.940 --> 00:14:29.360]   w większości
+[00:14:29.360 --> 00:14:30.180]   spędzałem ją na pracy,
+[00:14:30.180 --> 00:14:31.280]   bo w niedzielę
+[00:14:31.280 --> 00:14:32.400]   pisałem na przykład
+[00:14:32.400 --> 00:14:33.240]   artykuły blogowe
+[00:14:33.240 --> 00:14:33.780]   wtedy jeszcze,
+[00:14:33.780 --> 00:14:34.260]   czy gdzieś tam
+[00:14:34.260 --> 00:14:35.400]   robiłem stronę internetową.
+[00:14:35.400 --> 00:14:36.520]   Bardzo dużo
+[00:14:36.520 --> 00:14:37.460]   pracowałem wieczorami.
+[00:14:37.460 --> 00:14:38.360]   Myślę, że po pracy
+[00:14:38.360 --> 00:14:39.080]   to było co najmniej
+[00:14:39.080 --> 00:14:40.240]   dwie, trzy, cztery godziny.
+[00:14:40.840 --> 00:14:42.080]   Niemniej
+[00:14:42.080 --> 00:14:43.560]   z mojej perspektywy
+[00:14:43.560 --> 00:14:44.440]   bardzo chciałem
+[00:14:44.440 --> 00:14:45.120]   zbudować
+[00:14:45.120 --> 00:14:46.420]   własny biznes,
+[00:14:46.420 --> 00:14:47.260]   ale jednocześnie
+[00:14:47.260 --> 00:14:48.040]   bardzo chciałem
+[00:14:48.040 --> 00:14:49.400]   zminimalizować ryzyko
+[00:14:49.400 --> 00:14:50.420]   związane z
+[00:14:50.420 --> 00:14:51.300]   nieudanym
+[00:14:51.300 --> 00:14:51.920]   biznesem.
+[00:14:51.920 --> 00:14:52.360]   W związku z tym
+[00:14:52.360 --> 00:14:54.100]   ten czas,
+[00:14:54.100 --> 00:14:55.000]   kiedy tak bardzo
+[00:14:55.000 --> 00:14:55.840]   mocno pracowałem
+[00:14:55.840 --> 00:14:56.500]   po godzinach,
+[00:14:56.500 --> 00:14:57.060]   to jest czas
+[00:14:57.060 --> 00:14:58.440]   od mniej więcej
+[00:14:58.440 --> 00:14:59.100]   lutego
+[00:14:59.100 --> 00:15:00.840]   do końca sierpnia.
+[00:15:00.840 --> 00:15:01.720]   Tak rzeczywiście,
+[00:15:01.720 --> 00:15:02.520]   że robiłem tego
+[00:15:02.520 --> 00:15:02.960]   bardzo dużo,
+[00:15:02.960 --> 00:15:03.860]   to też nie były
+[00:15:03.860 --> 00:15:04.440]   długie lata,
+[00:15:04.440 --> 00:15:05.600]   to było raczej
+[00:15:05.600 --> 00:15:06.440]   kilka miesięcy
+[00:15:06.440 --> 00:15:07.480]   takiego mocnego
+[00:15:07.480 --> 00:15:08.580]   pracowania po godzinach.
+[00:15:08.580 --> 00:15:09.920]   Czę, że to odpowiada
+[00:15:09.920 --> 00:15:11.440]   na Twoje pytanie.
+[00:15:11.440 --> 00:15:13.480]   Kolejne pytanie.
+[00:15:13.480 --> 00:15:14.420]   Jak rozpocząć
+[00:15:14.420 --> 00:15:15.180]   sprzedaż B2B
+[00:15:15.180 --> 00:15:15.940]   na nowym rynku?
+[00:15:15.940 --> 00:15:16.960]   I tutaj dopytałem
+[00:15:16.960 --> 00:15:17.740]   Jacka Jelonka,
+[00:15:17.740 --> 00:15:18.980]   czy chodzi mi o nowy rynek,
+[00:15:18.980 --> 00:15:19.600]   czyli kraj,
+[00:15:19.600 --> 00:15:20.420]   czy chodzi mi o nową
+[00:15:20.420 --> 00:15:21.180]   grupę docelową?
+[00:15:21.180 --> 00:15:23.160]   I Jacek powiedział o tym,
+[00:15:23.160 --> 00:15:24.660]   że nową grupę docelową.
+[00:15:24.660 --> 00:15:25.580]   I teraz uwaga.
+[00:15:25.580 --> 00:15:27.600]   Pierwszym i drugim odcinkiem
+[00:15:27.600 --> 00:15:28.560]   tego podcastu
+[00:15:28.560 --> 00:15:29.720]   są dwa odcinki
+[00:15:29.720 --> 00:15:30.440]   o wartościach.
+[00:15:30.440 --> 00:15:31.700]   Tutaj możecie je
+[00:15:31.700 --> 00:15:32.700]   gdzieś pewnie zobaczyć
+[00:15:32.700 --> 00:15:33.460]   po lewej stronie,
+[00:15:33.460 --> 00:15:34.920]   po Waszej prawej,
+[00:15:34.920 --> 00:15:36.020]   mojej lewej,
+[00:15:36.020 --> 00:15:36.280]   tak.
+[00:15:36.280 --> 00:15:38.220]   I teraz
+[00:15:38.220 --> 00:15:39.620]   z mojej perspektywy
+[00:15:39.620 --> 00:15:41.040]   to od tego się
+[00:15:41.040 --> 00:15:41.880]   powinno rozpocząć,
+[00:15:41.880 --> 00:15:42.160]   czyli
+[00:15:42.160 --> 00:15:43.660]   buyer persona,
+[00:15:43.660 --> 00:15:47.180]   którą budujesz,
+[00:15:47.180 --> 00:15:48.680]   persona,
+[00:15:48.680 --> 00:15:49.720]   czyli
+[00:15:49.720 --> 00:15:51.480]   jaki jest ten segment
+[00:15:51.480 --> 00:15:52.660]   konkretnie,
+[00:15:52.660 --> 00:15:54.500]   do którego docierasz,
+[00:15:54.660 --> 00:15:56.900]   kim są osoby,
+[00:15:56.900 --> 00:15:57.620]   z którymi chcesz
+[00:15:57.620 --> 00:15:59.280]   zacząć pracować,
+[00:15:59.280 --> 00:16:00.540]   jakie konkretnie
+[00:16:00.540 --> 00:16:01.800]   problemy i wyzwania
+[00:16:01.800 --> 00:16:02.900]   mają wszystkie te osoby
+[00:16:02.900 --> 00:16:04.620]   i czy aby na pewno
+[00:16:04.620 --> 00:16:05.880]   ekscytują się
+[00:16:05.880 --> 00:16:06.980]   Twoimi wartościami,
+[00:16:06.980 --> 00:16:07.420]   czyli tym,
+[00:16:07.420 --> 00:16:08.340]   co to masz im
+[00:16:08.340 --> 00:16:10.140]   do wniesienia,
+[00:16:10.140 --> 00:16:10.900]   do tych biznesów.
+[00:16:10.900 --> 00:16:11.220]   I teraz
+[00:16:11.220 --> 00:16:12.560]   tak naprawdę
+[00:16:12.560 --> 00:16:14.040]   pierwszy miesiąc,
+[00:16:14.040 --> 00:16:14.660]   dwa czy trzy
+[00:16:14.660 --> 00:16:15.620]   powinieneś osobiście
+[00:16:15.620 --> 00:16:16.240]   nawet być może
+[00:16:16.240 --> 00:16:17.380]   porozmawiać z tymi ludźmi
+[00:16:17.380 --> 00:16:18.620]   i dobrze zrozumieć
+[00:16:18.620 --> 00:16:19.160]   ich problemy,
+[00:16:19.160 --> 00:16:19.940]   dobrze zrozumieć
+[00:16:19.940 --> 00:16:20.460]   ich wyzwania
+[00:16:20.460 --> 00:16:21.420]   i tak sformułować
+[00:16:21.420 --> 00:16:22.080]   te wartości,
+[00:16:22.080 --> 00:16:23.220]   żeby ci ludzie
+[00:16:23.220 --> 00:16:24.200]   niemalże
+[00:16:24.200 --> 00:16:25.060]   z zamkniętymi oczami
+[00:16:25.060 --> 00:16:25.740]   się decydowali
+[00:16:25.740 --> 00:16:26.680]   na Twoje produk i usługi.
+[00:16:26.680 --> 00:16:27.560]   Uważam, że jeżeli to
+[00:16:27.560 --> 00:16:28.420]   będzie dobrze zrobione,
+[00:16:28.420 --> 00:16:29.120]   czyli
+[00:16:29.120 --> 00:16:31.540]   naprawdę przemyślane,
+[00:16:31.540 --> 00:16:32.280]   dobrze wykonane,
+[00:16:32.280 --> 00:16:34.140]   to w bardzo dużej mierze
+[00:16:34.140 --> 00:16:34.820]   może się okazać,
+[00:16:34.820 --> 00:16:35.900]   że reszta później
+[00:16:35.900 --> 00:16:36.880]   wydarzy się
+[00:16:36.880 --> 00:16:38.260]   trochę sama.
+[00:16:38.260 --> 00:16:39.240]   Wiem, że to oczywiście
+[00:16:39.240 --> 00:16:39.820]   przedstawiłem
+[00:16:39.820 --> 00:16:40.660]   w bardzo prosty sposób,
+[00:16:40.820 --> 00:16:41.660]   ale też w podcaście
+[00:16:41.660 --> 00:16:42.740]   znajdziesz
+[00:16:42.740 --> 00:16:43.740]   podcaście
+[00:16:43.740 --> 00:16:44.140]   Nowoczesne
+[00:16:44.140 --> 00:16:44.780]   sprzedaje się marketing
+[00:16:44.780 --> 00:16:45.480]   znajdziesz odcinek
+[00:16:45.480 --> 00:16:46.420]   o buyer personie,
+[00:16:46.420 --> 00:16:47.780]   też o strategii
+[00:16:47.780 --> 00:16:49.340]   i oba te odcinki
+[00:16:49.340 --> 00:16:49.860]   mogą ci
+[00:16:49.860 --> 00:16:50.420]   realnie
+[00:16:50.420 --> 00:16:51.360]   w tym punkcie
+[00:16:51.360 --> 00:16:52.120]   pomóc.
+[00:16:52.120 --> 00:16:54.560]   Marcin Kamiński
+[00:16:54.560 --> 00:16:55.100]   zadał kilka
+[00:16:55.100 --> 00:16:56.020]   bardzo ciekawych pytań.
+[00:16:56.020 --> 00:16:56.860]   Nie wszystkie zadam,
+[00:16:56.860 --> 00:16:57.360]   ale zadam
+[00:16:57.360 --> 00:16:57.940]   co najmniej dwa.
+[00:16:57.940 --> 00:16:58.880]   Pierwsze,
+[00:16:58.880 --> 00:16:59.680]   jaki masz plan
+[00:16:59.680 --> 00:17:00.740]   na uniezależnienie
+[00:17:00.740 --> 00:17:01.500]   marketingu
+[00:17:01.500 --> 00:17:02.460]   od firmy
+[00:17:02.460 --> 00:17:03.220]   od swojej osoby?
+[00:17:03.220 --> 00:17:05.240]   Bardzo prosty
+[00:17:05.240 --> 00:17:05.740]   jest ten plan.
+[00:17:06.380 --> 00:17:06.820]   to znaczy
+[00:17:06.820 --> 00:17:08.500]   za Hirewise
+[00:17:08.500 --> 00:17:09.060]   odpowiada
+[00:17:09.060 --> 00:17:09.840]   Iwona,
+[00:17:09.840 --> 00:17:11.400]   obecnie za Adwise
+[00:17:11.400 --> 00:17:11.960]   odpowiada
+[00:17:11.960 --> 00:17:12.620]   Ewa
+[00:17:12.620 --> 00:17:14.600]   i tyle.
+[00:17:14.600 --> 00:17:15.640]   A za Akademię
+[00:17:15.640 --> 00:17:15.980]   odpowiada
+[00:17:15.980 --> 00:17:16.860]   m.in. Marcin.
+[00:17:16.860 --> 00:17:17.600]   To znaczy już teraz
+[00:17:17.600 --> 00:17:18.020]   tych osób,
+[00:17:18.020 --> 00:17:19.900]   które odklejają się
+[00:17:19.900 --> 00:17:20.660]   od mojego wizerunku
+[00:17:20.660 --> 00:17:21.780]   zaczyna być coraz więcej.
+[00:17:21.780 --> 00:17:22.820]   Cała organizacja
+[00:17:22.820 --> 00:17:23.420]   zaraz będzie miała
+[00:17:23.420 --> 00:17:24.420]   ponad 50 osób.
+[00:17:24.420 --> 00:17:25.300]   W związku z tym
+[00:17:25.300 --> 00:17:27.000]   pewnie to się kiedyś
+[00:17:27.000 --> 00:17:27.460]   odklei,
+[00:17:27.460 --> 00:17:28.140]   ale na dzisiaj
+[00:17:28.140 --> 00:17:29.300]   nagrywanie filmów
+[00:17:29.300 --> 00:17:29.840]   i podcastów
+[00:17:29.840 --> 00:17:30.820]   daje mi tyle radości,
+[00:17:30.820 --> 00:17:31.940]   że nawet bym chyba
+[00:17:31.940 --> 00:17:32.260]   nie chciał,
+[00:17:32.260 --> 00:17:33.040]   żeby to się za szybko
+[00:17:33.040 --> 00:17:33.520]   odklejało,
+[00:17:33.520 --> 00:17:34.340]   tak szczerze mówiąc.
+[00:17:34.340 --> 00:17:35.580]   Póki jestem młody,
+[00:17:35.580 --> 00:17:36.020]   zdrowy
+[00:17:36.020 --> 00:17:36.700]   i jeszcze mi się chce
+[00:17:36.700 --> 00:17:38.980]   to po co?
+[00:17:38.980 --> 00:17:40.960]   Ale docelowo tak.
+[00:17:40.960 --> 00:17:41.720]   Jest na to plan
+[00:17:41.720 --> 00:17:43.060]   i są do tego osoby,
+[00:17:43.060 --> 00:17:43.980]   które potencjalnie
+[00:17:43.980 --> 00:17:44.900]   mogą to
+[00:17:44.900 --> 00:17:46.280]   ode mnie zabrać.
+[00:17:46.280 --> 00:17:47.220]   I punkt drugi.
+[00:17:47.220 --> 00:17:48.380]   Zadałeś bardzo
+[00:17:48.380 --> 00:17:49.320]   potwitliwe pytanie.
+[00:17:49.320 --> 00:17:50.840]   Czy budujesz biznesy
+[00:17:50.840 --> 00:17:52.060]   z myślą o ich sprzedaży
+[00:17:52.060 --> 00:17:53.080]   czy masz inny plan?
+[00:17:53.080 --> 00:17:53.680]   Tylko nie mów,
+[00:17:53.680 --> 00:17:54.160]   że się nad tym
+[00:17:54.160 --> 00:17:54.880]   nie zastanawiałeś.
+[00:17:54.880 --> 00:17:57.660]   Zastanawiałem się.
+[00:17:57.660 --> 00:17:59.760]   I
+[00:17:59.760 --> 00:18:02.240]   teoretycznie czysto
+[00:18:02.240 --> 00:18:04.660]   biznes, który buduję
+[00:18:04.660 --> 00:18:05.160]   jest sprzedawalny,
+[00:18:05.660 --> 00:18:06.920]   czy ma być sprzedawalny?
+[00:18:06.920 --> 00:18:07.880]   Oczywiście to się wiąże
+[00:18:07.880 --> 00:18:08.820]   z punktem pierwszym,
+[00:18:08.820 --> 00:18:10.240]   czyli z mocnym powiązaniem
+[00:18:10.240 --> 00:18:11.160]   całej grupy
+[00:18:11.160 --> 00:18:12.320]   z moją twarzą.
+[00:18:12.320 --> 00:18:13.260]   Jest to potencjalnie
+[00:18:13.260 --> 00:18:14.120]   czynnik, który
+[00:18:14.120 --> 00:18:15.760]   ten sprzedaż
+[00:18:15.760 --> 00:18:17.160]   może utrudniać.
+[00:18:17.160 --> 00:18:18.360]   Natomiast w horyzoncie
+[00:18:18.360 --> 00:18:18.780]   czasowym,
+[00:18:18.780 --> 00:18:19.840]   w którym o takiej sprzedaży
+[00:18:19.840 --> 00:18:20.460]   potencjalnie bym
+[00:18:20.460 --> 00:18:21.000]   rozmyślał,
+[00:18:21.000 --> 00:18:21.920]   czynnik ten
+[00:18:21.920 --> 00:18:23.120]   na pewno się wypłaszczy.
+[00:18:23.120 --> 00:18:23.400]   To znaczy,
+[00:18:23.400 --> 00:18:23.940]   tak jak powiedziałem
+[00:18:23.940 --> 00:18:24.600]   w punkcie pierwszym,
+[00:18:24.600 --> 00:18:25.140]   jest plan na to,
+[00:18:25.140 --> 00:18:25.980]   żeby oderwać to tylko
+[00:18:25.980 --> 00:18:26.780]   od mojej twarzy
+[00:18:26.780 --> 00:18:28.000]   i skupić się też
+[00:18:28.000 --> 00:18:28.940]   na innych metodach
+[00:18:28.940 --> 00:18:30.100]   pozyskiwania biznesu.
+[00:18:30.100 --> 00:18:30.600]   Więc
+[00:18:30.600 --> 00:18:31.700]   jeżeli biznes
+[00:18:31.700 --> 00:18:32.200]   oderwie się
+[00:18:32.200 --> 00:18:32.780]   od mojej twarzy
+[00:18:32.780 --> 00:18:33.940]   i będzie działał dobrze,
+[00:18:33.940 --> 00:18:35.060]   być może kiedyś
+[00:18:35.060 --> 00:18:35.880]   zostanie sprzedany.
+[00:18:35.880 --> 00:18:37.320]   Natomiast
+[00:18:37.320 --> 00:18:38.820]   sam jakby biznes
+[00:18:38.820 --> 00:18:39.720]   buduje w taki sposób,
+[00:18:39.720 --> 00:18:40.480]   jakby miał być
+[00:18:40.480 --> 00:18:41.500]   nigdy nie sprzedany.
+[00:18:41.500 --> 00:18:42.380]   To znaczy,
+[00:18:42.380 --> 00:18:44.200]   to są
+[00:18:44.200 --> 00:18:45.200]   nasze firmy,
+[00:18:45.200 --> 00:18:46.420]   one powinny
+[00:18:46.420 --> 00:18:46.940]   dawać nam
+[00:18:46.940 --> 00:18:47.620]   rentowność,
+[00:18:47.620 --> 00:18:48.660]   powinny być może
+[00:18:48.660 --> 00:18:49.620]   zostać odziedziczone
+[00:18:49.620 --> 00:18:50.320]   kiedyś przez
+[00:18:50.320 --> 00:18:51.300]   kogoś
+[00:18:51.300 --> 00:18:52.580]   i teoretycznie
+[00:18:52.580 --> 00:18:52.880]   czysto
+[00:18:52.880 --> 00:18:53.760]   nie wymagają
+[00:18:53.760 --> 00:18:55.420]   sprzedaży.
+[00:18:55.420 --> 00:18:56.340]   Więc wcale nie jest tak,
+[00:18:56.340 --> 00:18:56.860]   że mam jakiś
+[00:18:56.860 --> 00:18:57.380]   bardzo mocno
+[00:18:57.380 --> 00:18:58.400]   przemyślany exit plan.
+[00:18:58.400 --> 00:19:00.020]   Biorę pod uwagę
+[00:19:00.020 --> 00:19:00.580]   de facto
+[00:19:00.580 --> 00:19:01.360]   wszystkie opcje
+[00:19:01.360 --> 00:19:02.140]   i one wszystkie są
+[00:19:02.140 --> 00:19:03.140]   w porządku.
+[00:19:03.140 --> 00:19:04.900]   Więc zastanawiałem się
+[00:19:04.900 --> 00:19:05.140]   nad tym,
+[00:19:05.140 --> 00:19:05.800]   ale nic ciekawego
+[00:19:05.800 --> 00:19:06.280]   nie wymyśliłem,
+[00:19:06.280 --> 00:19:06.700]   jak widzisz.
+[00:19:06.700 --> 00:19:08.320]   Taka sytuacja.
+[00:19:08.320 --> 00:19:10.680]   I trzecie pytanie
+[00:19:10.680 --> 00:19:11.360]   twoje zadam.
+[00:19:11.360 --> 00:19:12.560]   Czy spodziewasz się
+[00:19:12.560 --> 00:19:13.380]   lepszych czy gorszych
+[00:19:13.380 --> 00:19:14.040]   dwóch, trzech lat
+[00:19:14.040 --> 00:19:14.580]   dla firm
+[00:19:14.580 --> 00:19:15.720]   marketingowych
+[00:19:15.720 --> 00:19:17.160]   czy digital marketingowych
+[00:19:17.160 --> 00:19:17.720]   i dlaczego?
+[00:19:17.720 --> 00:19:19.780]   Generalnie tak.
+[00:19:19.780 --> 00:19:20.640]   Mówi się o tym,
+[00:19:20.800 --> 00:19:22.040]   że czasy kryzysu
+[00:19:22.040 --> 00:19:22.740]   czyli czasy
+[00:19:22.740 --> 00:19:23.960]   kiedy jest trudniej
+[00:19:23.960 --> 00:19:26.500]   mają negatywny wpływ
+[00:19:26.500 --> 00:19:27.040]   na marketing.
+[00:19:27.040 --> 00:19:28.060]   Firmy ucinają
+[00:19:28.060 --> 00:19:28.920]   budżet marketingowy
+[00:19:28.920 --> 00:19:29.340]   bo jest go
+[00:19:29.340 --> 00:19:30.580]   bardzo łatwo odciąć.
+[00:19:30.580 --> 00:19:31.240]   Ale
+[00:19:31.240 --> 00:19:32.900]   na to trzeba nałożyć
+[00:19:32.900 --> 00:19:35.060]   też pewien filtr.
+[00:19:35.060 --> 00:19:35.760]   To znaczy
+[00:19:35.760 --> 00:19:37.200]   obecna sytuacja
+[00:19:37.200 --> 00:19:38.380]   nazwijmy ją
+[00:19:38.380 --> 00:19:40.740]   jako polityczno-geograficzna
+[00:19:40.740 --> 00:19:41.900]   jest taka,
+[00:19:41.900 --> 00:19:42.940]   że moim zdaniem
+[00:19:42.940 --> 00:19:43.660]   bardzo mocno
+[00:19:43.660 --> 00:19:44.180]   przez najbliższe
+[00:19:44.180 --> 00:19:44.680]   2-3 lata
+[00:19:44.680 --> 00:19:45.520]   będzie sprzyjała
+[00:19:45.520 --> 00:19:46.040]   wzrostowi
+[00:19:46.040 --> 00:19:47.040]   polskich średnich
+[00:19:47.040 --> 00:19:48.400]   i mniejszych
+[00:19:48.400 --> 00:19:49.020]   dużych firm.
+[00:19:49.020 --> 00:19:50.260]   Mniejsze duże
+[00:19:50.260 --> 00:19:50.820]   to mam na myśli
+[00:19:50.820 --> 00:19:51.800]   takie duże organizacje,
+[00:19:51.800 --> 00:19:52.440]   które jeszcze nie są
+[00:19:52.440 --> 00:19:52.880]   molochami,
+[00:19:52.880 --> 00:19:53.440]   ale mają na przykład
+[00:19:53.440 --> 00:19:54.380]   1500 osób
+[00:19:54.380 --> 00:19:55.440]   i ponad miliard
+[00:19:55.440 --> 00:19:56.180]   przychodu na przykład.
+[00:19:56.180 --> 00:19:57.780]   Tego typu duże organizacje.
+[00:19:57.780 --> 00:19:58.340]   Okazuje się,
+[00:19:58.340 --> 00:19:58.900]   że jeżeli
+[00:19:58.900 --> 00:20:00.180]   te firmy
+[00:20:00.180 --> 00:20:01.020]   będą miały większość
+[00:20:01.020 --> 00:20:01.700]   łańcucha dostaw
+[00:20:01.700 --> 00:20:02.820]   tutaj, gdzieś w Europie
+[00:20:02.820 --> 00:20:03.360]   albo daj Boże
+[00:20:03.360 --> 00:20:04.020]   w samej Polsce
+[00:20:04.020 --> 00:20:05.500]   to one mogą się pięknie
+[00:20:05.500 --> 00:20:06.260]   w najbliższych latach
+[00:20:06.260 --> 00:20:06.800]   rozwijać.
+[00:20:06.800 --> 00:20:07.500]   W związku z tym
+[00:20:07.500 --> 00:20:09.360]   wręcz wydaje mi się,
+[00:20:09.360 --> 00:20:10.240]   że przez te 2-3 lata
+[00:20:10.240 --> 00:20:11.640]   sytuacja film związanych
+[00:20:11.640 --> 00:20:12.520]   z digital marketingiem
+[00:20:12.520 --> 00:20:13.060]   będzie dobra.
+[00:20:13.060 --> 00:20:13.760]   Poza tym
+[00:20:13.760 --> 00:20:14.400]   wchodzimy też
+[00:20:14.400 --> 00:20:16.700]   w moment rzeczywistości,
+[00:20:16.700 --> 00:20:17.520]   w którym coraz więcej
+[00:20:17.520 --> 00:20:18.720]   organizacji zrozumiało,
+[00:20:18.720 --> 00:20:20.340]   że stworzenie dobrego
+[00:20:20.340 --> 00:20:21.300]   digital marketingu
+[00:20:21.300 --> 00:20:22.360]   ze sprawnym działem sprzedaży
+[00:20:22.360 --> 00:20:23.440]   jest znacznie tańsze
+[00:20:23.440 --> 00:20:24.820]   niż rozbudowywanie
+[00:20:24.820 --> 00:20:25.440]   działu sprzedaży
+[00:20:25.440 --> 00:20:26.120]   w nieskończoność.
+[00:20:26.920 --> 00:20:27.340]   W związku z tym
+[00:20:27.340 --> 00:20:28.420]   ja wróżę,
+[00:20:28.420 --> 00:20:29.560]   że będzie bardzo dobrze
+[00:20:29.560 --> 00:20:31.940]   dla film digital marketingowych,
+[00:20:31.940 --> 00:20:33.140]   które nie pracują
+[00:20:33.140 --> 00:20:34.340]   z wielkimi korporacjami.
+[00:20:34.340 --> 00:20:35.220]   Tam uważam,
+[00:20:35.220 --> 00:20:36.160]   że może być różnie,
+[00:20:36.160 --> 00:20:38.320]   ale oczywiście
+[00:20:38.320 --> 00:20:40.120]   jak to z tymi moimi
+[00:20:40.120 --> 00:20:40.980]   wróżbami wyjdzie,
+[00:20:40.980 --> 00:20:43.220]   to się przekonamy.
+[00:20:43.220 --> 00:20:45.760]   Kolejne pytanie.
+[00:20:45.760 --> 00:20:47.940]   Jak określić
+[00:20:47.940 --> 00:20:48.860]   minimalny poziom wiedzy
+[00:20:48.860 --> 00:20:49.360]   i umiejętności
+[00:20:49.360 --> 00:20:50.120]   w jakiejś dziedzinie
+[00:20:50.120 --> 00:20:50.980]   zanim wyjdzie się
+[00:20:50.980 --> 00:20:51.620]   z tym
+[00:20:51.620 --> 00:20:53.040]   w ramach usług?
+[00:20:53.040 --> 00:20:54.220]   I uważam,
+[00:20:54.220 --> 00:20:54.880]   że ta odpowiedź
+[00:20:54.880 --> 00:20:55.640]   nie istnieje.
+[00:20:55.640 --> 00:20:56.100]   W sensie,
+[00:20:56.100 --> 00:20:56.720]   jak to zrobić?
+[00:20:56.920 --> 00:20:57.620]   De facto
+[00:20:57.620 --> 00:20:58.320]   usługa,
+[00:20:58.320 --> 00:20:59.080]   którą stworzysz
+[00:20:59.080 --> 00:21:00.420]   może być bardzo prosta,
+[00:21:00.420 --> 00:21:01.520]   nie wymagająca
+[00:21:01.520 --> 00:21:02.560]   znaczącej wiedzy,
+[00:21:02.560 --> 00:21:04.260]   ale bardzo potrzebna rynkowi.
+[00:21:04.260 --> 00:21:05.560]   Nie będę rysował jeszcze raz
+[00:21:05.560 --> 00:21:06.340]   buyer persony,
+[00:21:06.340 --> 00:21:07.860]   bo to się bardziej
+[00:21:07.860 --> 00:21:08.940]   sprowadza do wymyślenia
+[00:21:08.940 --> 00:21:10.660]   w jakich firmach
+[00:21:10.660 --> 00:21:11.080]   kto,
+[00:21:11.080 --> 00:21:12.120]   jaki ma problem
+[00:21:12.120 --> 00:21:13.200]   i jaką ja mu wnoszę
+[00:21:13.200 --> 00:21:14.300]   do tego wartość.
+[00:21:14.300 --> 00:21:15.180]   To wcale nie zawsze
+[00:21:15.180 --> 00:21:15.820]   będzie wymagało
+[00:21:15.820 --> 00:21:16.780]   ogromnych kompetencji.
+[00:21:16.780 --> 00:21:18.620]   Wręcz przeciwnie.
+[00:21:18.620 --> 00:21:19.340]   Może się okazać,
+[00:21:19.340 --> 00:21:20.580]   że na przykład
+[00:21:20.580 --> 00:21:21.380]   zbudujesz biznes,
+[00:21:21.380 --> 00:21:21.760]   który
+[00:21:21.760 --> 00:21:23.040]   nie wiem,
+[00:21:23.040 --> 00:21:23.560]   skupia jakieś
+[00:21:23.560 --> 00:21:24.640]   wirtualne asystentki
+[00:21:24.640 --> 00:21:25.800]   czy robi coś
+[00:21:25.800 --> 00:21:26.940]   jeszcze innego,
+[00:21:26.940 --> 00:21:27.740]   coś co jest proste,
+[00:21:27.740 --> 00:21:28.660]   nie wymaga jakiejś bardzo,
+[00:21:28.660 --> 00:21:29.540]   bardzo wielkiej wiedzy
+[00:21:29.540 --> 00:21:30.300]   specjalistycznej.
+[00:21:30.300 --> 00:21:31.680]   Proste pod kątem
+[00:21:31.680 --> 00:21:32.340]   oczywiście samych
+[00:21:32.340 --> 00:21:33.100]   świadczonych usług.
+[00:21:33.100 --> 00:21:33.920]   Założenie biznesu
+[00:21:33.920 --> 00:21:34.780]   zawsze jest relatywnie
+[00:21:34.780 --> 00:21:35.180]   trudne,
+[00:21:35.180 --> 00:21:37.260]   więc wydaje mi się,
+[00:21:37.580 --> 00:21:39.420]   coś takiego nie istnieje.
+[00:21:39.420 --> 00:21:41.260]   Kolejne pytanie.
+[00:21:41.260 --> 00:21:42.960]   Sebastian Kowalewski.
+[00:21:42.960 --> 00:21:44.200]   Gdzie planujecie
+[00:21:44.200 --> 00:21:44.920]   i trzymacie
+[00:21:44.920 --> 00:21:45.560]   procesy?
+[00:21:45.560 --> 00:21:46.260]   Wszystkie,
+[00:21:46.260 --> 00:21:47.440]   nie tylko sprzedażowe.
+[00:21:47.440 --> 00:21:48.640]   Jakie narzędzia,
+[00:21:48.640 --> 00:21:49.360]   żeby to było
+[00:21:49.360 --> 00:21:50.280]   proste i zrozumiałe?
+[00:21:50.280 --> 00:21:51.620]   I oczywiście narzędzi
+[00:21:51.620 --> 00:21:52.400]   jest bardzo dużo.
+[00:21:52.400 --> 00:21:53.920]   Możecie korzystać
+[00:21:53.920 --> 00:21:54.220]   z jakiegoś
+[00:21:54.220 --> 00:21:54.840]   Confluensa,
+[00:21:54.840 --> 00:21:55.700]   możecie korzystać
+[00:21:55.700 --> 00:21:56.500]   z SharePointa.
+[00:21:56.500 --> 00:21:57.820]   Natomiast w gruncie rzeczy
+[00:21:57.820 --> 00:22:00.120]   ja mam jakby coś,
+[00:22:00.120 --> 00:22:01.700]   co zawsze bardzo łatwo
+[00:22:01.700 --> 00:22:02.340]   mi układa
+[00:22:02.340 --> 00:22:04.020]   procesy,
+[00:22:04.020 --> 00:22:05.360]   czyli mam tabelki,
+[00:22:05.360 --> 00:22:06.400]   których na przykład
+[00:22:06.400 --> 00:22:07.100]   jedna tabelka
+[00:22:07.100 --> 00:22:07.980]   jest dla obszaru
+[00:22:07.980 --> 00:22:09.640]   obszar 1,
+[00:22:09.640 --> 00:22:10.040]   na przykład
+[00:22:10.040 --> 00:22:10.740]   nazwijmy go
+[00:22:10.740 --> 00:22:11.600]   obszarem sprzedaży
+[00:22:11.600 --> 00:22:12.780]   i jest tutaj
+[00:22:12.780 --> 00:22:13.740]   co najmniej kilka rzeczy.
+[00:22:13.740 --> 00:22:14.940]   Jest nazwa procesu,
+[00:22:14.940 --> 00:22:17.500]   jest osoba
+[00:22:17.500 --> 00:22:18.780]   za niego odpowiedzialna
+[00:22:18.780 --> 00:22:20.140]   i jest link
+[00:22:20.140 --> 00:22:21.060]   do tego procesu.
+[00:22:21.060 --> 00:22:22.900]   I teraz tego typu tabele
+[00:22:22.900 --> 00:22:24.520]   buduję dla całej organizacji
+[00:22:24.520 --> 00:22:25.660]   i dla wszystkich jej obszarów
+[00:22:25.660 --> 00:22:27.140]   i udostępniam ludziom
+[00:22:27.140 --> 00:22:28.220]   tak, żeby każdy
+[00:22:28.220 --> 00:22:28.860]   mógł zobaczyć
+[00:22:28.860 --> 00:22:29.640]   wszystkie procesy.
+[00:22:29.640 --> 00:22:30.920]   Dlaczego tutaj są linki?
+[00:22:30.920 --> 00:22:31.880]   Dlatego, że
+[00:22:31.880 --> 00:22:33.000]   każdy proces
+[00:22:33.000 --> 00:22:34.200]   może być w innej formie.
+[00:22:34.200 --> 00:22:34.840]   Jeden może być
+[00:22:34.840 --> 00:22:35.380]   w postaci
+[00:22:35.380 --> 00:22:37.100]   wykresu
+[00:22:37.100 --> 00:22:38.260]   czy jakiegoś
+[00:22:38.260 --> 00:22:38.560]   nie wiem
+[00:22:38.560 --> 00:22:39.500]   flowchartu na przykład.
+[00:22:39.500 --> 00:22:40.620]   Drugi może być
+[00:22:40.620 --> 00:22:41.600]   w postaci tekstowej.
+[00:22:41.600 --> 00:22:42.380]   Trzeci może być
+[00:22:42.380 --> 00:22:43.440]   zdjęciem
+[00:22:43.440 --> 00:22:44.400]   rysunku na ścianie
+[00:22:44.400 --> 00:22:44.940]   dosłownie,
+[00:22:44.940 --> 00:22:45.860]   bo takie procesy
+[00:22:45.860 --> 00:22:47.140]   też są ciągle procesami
+[00:22:47.140 --> 00:22:48.340]   albo screenem maila,
+[00:22:48.340 --> 00:22:49.400]   bo sobie coś ustaliliśmy.
+[00:22:49.400 --> 00:22:50.900]   I teraz
+[00:22:50.900 --> 00:22:52.080]   pod tym linkiem
+[00:22:52.080 --> 00:22:52.900]   znajduje się
+[00:22:52.900 --> 00:22:53.480]   dokładnie
+[00:22:53.480 --> 00:22:54.640]   taka forma procesu,
+[00:22:54.640 --> 00:22:55.360]   jaka jest istotna.
+[00:22:55.360 --> 00:22:56.220]   I obecnie w Cellwise
+[00:22:56.220 --> 00:22:57.540]   trzymamy to dokładnie
+[00:22:57.540 --> 00:22:58.180]   w tej postaci.
+[00:22:58.180 --> 00:22:59.100]   Każdy proces
+[00:22:59.100 --> 00:22:59.820]   ma swoją nazwę,
+[00:22:59.820 --> 00:23:00.540]   ma swoją osobę
+[00:23:00.540 --> 00:23:01.020]   odpowiedzialną,
+[00:23:01.100 --> 00:23:01.920]   która jest odpowiedzialna
+[00:23:01.920 --> 00:23:03.320]   za jego aktualizowanie
+[00:23:03.320 --> 00:23:04.700]   oraz link,
+[00:23:04.700 --> 00:23:05.620]   który do niego prowadzi.
+[00:23:05.620 --> 00:23:06.420]   Po prostu nowi ludzie
+[00:23:06.420 --> 00:23:07.100]   mogą w to wejść
+[00:23:07.100 --> 00:23:08.880]   i się w tych procesach
+[00:23:08.880 --> 00:23:10.020]   przejrzeć.
+[00:23:10.020 --> 00:23:11.860]   Dobrze.
+[00:23:11.860 --> 00:23:13.200]   Kolejne pytanie.
+[00:23:13.200 --> 00:23:14.940]   Sikor, Sikor.
+[00:23:14.940 --> 00:23:16.220]   Cóż za
+[00:23:16.220 --> 00:23:18.040]   ciekawe
+[00:23:18.040 --> 00:23:18.720]   imię i nazwisko.
+[00:23:18.720 --> 00:23:20.240]   Do którego momentu
+[00:23:20.240 --> 00:23:20.640]   w Cellwise
+[00:23:20.640 --> 00:23:21.560]   jechaliście bardziej
+[00:23:21.560 --> 00:23:22.320]   na Twojej energii
+[00:23:22.320 --> 00:23:23.100]   i entuzjazmie,
+[00:23:23.100 --> 00:23:24.660]   a kiedy nastąpił przełom,
+[00:23:24.660 --> 00:23:25.380]   że proces
+[00:23:25.380 --> 00:23:26.560]   stał się niezbędny?
+[00:23:27.320 --> 00:23:27.720]   Uważam,
+[00:23:27.720 --> 00:23:29.140]   że jechanie
+[00:23:29.140 --> 00:23:29.720]   na energii
+[00:23:29.720 --> 00:23:30.400]   i entuzjazmie
+[00:23:30.400 --> 00:23:30.980]   nie wyklucza się
+[00:23:30.980 --> 00:23:31.580]   z procesami.
+[00:23:31.580 --> 00:23:32.240]   To znaczy
+[00:23:32.240 --> 00:23:34.460]   procesy warto,
+[00:23:34.460 --> 00:23:34.840]   żeby były
+[00:23:34.840 --> 00:23:35.760]   od samego początku,
+[00:23:35.760 --> 00:23:37.360]   a żeby energię
+[00:23:37.360 --> 00:23:38.100]   i entuzjazm
+[00:23:38.100 --> 00:23:38.800]   wykorzystywać
+[00:23:38.800 --> 00:23:40.500]   jako silnik
+[00:23:40.500 --> 00:23:41.260]   służący
+[00:23:41.260 --> 00:23:43.060]   do tworzenia,
+[00:23:43.060 --> 00:23:44.040]   zmieniania
+[00:23:44.040 --> 00:23:45.420]   i dostosowywania
+[00:23:45.420 --> 00:23:46.040]   tych procesów.
+[00:23:46.040 --> 00:23:46.400]   To znaczy
+[00:23:46.400 --> 00:23:47.260]   procesy są,
+[00:23:47.260 --> 00:23:48.460]   ale entuzjazm
+[00:23:48.460 --> 00:23:48.920]   i energia
+[00:23:48.920 --> 00:23:49.400]   są po to,
+[00:23:49.400 --> 00:23:50.420]   żeby je ciągle zmieniać,
+[00:23:50.420 --> 00:23:51.360]   żeby je dostosowywać,
+[00:23:51.360 --> 00:23:52.360]   żeby one się poprawiały.
+[00:23:52.920 --> 00:23:53.240]   Natomiast
+[00:23:53.240 --> 00:23:54.240]   myślę,
+[00:23:54.240 --> 00:23:54.800]   że do dzisiaj
+[00:23:54.800 --> 00:23:55.700]   cała organizacja
+[00:23:55.700 --> 00:23:56.460]   trochę idzie
+[00:23:56.460 --> 00:23:57.240]   na entuzjazmie,
+[00:23:57.240 --> 00:23:58.900]   który jest ze mną związany.
+[00:23:58.900 --> 00:23:59.640]   To znaczy,
+[00:23:59.640 --> 00:24:00.640]   gdybym nie wymyślał
+[00:24:00.640 --> 00:24:01.120]   nowych rzeczy,
+[00:24:01.120 --> 00:24:01.940]   gdybym tylko siedział
+[00:24:01.940 --> 00:24:03.160]   i czekał,
+[00:24:03.160 --> 00:24:04.200]   aż biznes się sam rozwinie,
+[00:24:04.200 --> 00:24:04.540]   to pewnie
+[00:24:04.540 --> 00:24:06.060]   i nie byłoby z nami
+[00:24:06.060 --> 00:24:07.180]   tylu fajnych specjalistów.
+[00:24:07.180 --> 00:24:07.980]   Więc myślę,
+[00:24:07.980 --> 00:24:09.480]   że to trwa do dzisiaj
+[00:24:09.480 --> 00:24:10.480]   i od samego początku
+[00:24:10.480 --> 00:24:12.320]   jedno współistnieje
+[00:24:12.320 --> 00:24:13.100]   z drugim.
+[00:24:13.100 --> 00:24:14.400]   I też wydaje mi się,
+[00:24:14.400 --> 00:24:19.760]   że tak powinno to działać.
+[00:24:19.760 --> 00:24:21.320]   Jakub Hejser.
+[00:24:21.320 --> 00:24:22.780]   Też fajne pytanie.
+[00:24:22.920 --> 00:24:24.060]   jakie miałaś rozwojowe
+[00:24:24.060 --> 00:24:25.500]   oraz ograniczające
+[00:24:25.500 --> 00:24:26.320]   myśli przekonania,
+[00:24:26.320 --> 00:24:27.740]   które blokowały
+[00:24:27.740 --> 00:24:28.900]   i napędzały
+[00:24:28.900 --> 00:24:29.740]   Wasz rozwój
+[00:24:29.740 --> 00:24:31.040]   na początku biznesu,
+[00:24:31.040 --> 00:24:32.020]   a dostrzegłeś je
+[00:24:32.020 --> 00:24:32.980]   z czasem.
+[00:24:32.980 --> 00:24:35.300]   Największą rzecz,
+[00:24:35.300 --> 00:24:36.520]   którą dostrzegłem
+[00:24:36.520 --> 00:24:36.980]   z czasem
+[00:24:36.980 --> 00:24:38.220]   pozytywnie wpływającą
+[00:24:38.220 --> 00:24:38.680]   na biznes
+[00:24:38.680 --> 00:24:40.220]   jest kultura organizacyjna.
+[00:24:40.220 --> 00:24:41.520]   Ja o tym mówiłem
+[00:24:41.520 --> 00:24:42.360]   dwa odcinki temu.
+[00:24:42.360 --> 00:24:44.780]   Jeżeli ktoś by mi powiedział,
+[00:24:44.780 --> 00:24:45.780]   jak bardzo to wpływa
+[00:24:45.780 --> 00:24:46.400]   na rozwój firmy,
+[00:24:46.400 --> 00:24:47.260]   to bym nie uwierzył
+[00:24:47.260 --> 00:24:48.060]   parę lat temu.
+[00:24:48.060 --> 00:24:49.920]   Natomiast widzę teraz,
+[00:24:49.920 --> 00:24:50.740]   na przykład patrząc
+[00:24:50.740 --> 00:24:51.540]   na nasz zespół
+[00:24:51.540 --> 00:24:52.540]   w grupie Wise
+[00:24:52.540 --> 00:24:53.400]   i patrząc na przykład
+[00:24:53.400 --> 00:24:54.040]   na zespoły
+[00:24:54.040 --> 00:24:55.120]   różnych organizacji,
+[00:24:55.120 --> 00:24:56.240]   w których zdarza mi się bywać,
+[00:24:56.240 --> 00:24:57.000]   to widzę,
+[00:24:57.000 --> 00:24:58.500]   jak ogromny ma to wpływ,
+[00:24:58.500 --> 00:24:59.500]   jak bardzo ludzie
+[00:24:59.500 --> 00:25:00.200]   i to w jaki sposób
+[00:25:00.200 --> 00:25:01.040]   myślą i pracują
+[00:25:01.040 --> 00:25:02.340]   mają wpływ na to,
+[00:25:02.340 --> 00:25:03.280]   czy ta organizacja rośnie.
+[00:25:03.280 --> 00:25:04.780]   Że już dawno, dawno temu
+[00:25:04.780 --> 00:25:05.500]   cała grupa Wise
+[00:25:05.500 --> 00:25:06.100]   stała się czymś
+[00:25:06.100 --> 00:25:06.560]   znacznie więcej
+[00:25:06.560 --> 00:25:07.140]   niż tylko ja,
+[00:25:07.260 --> 00:25:07.880]   mój wizerunek,
+[00:25:07.880 --> 00:25:09.360]   czy to co sobie negacz wymyśli,
+[00:25:09.360 --> 00:25:10.540]   tylko jesteśmy tym,
+[00:25:10.540 --> 00:25:11.680]   czym są ci ludzie,
+[00:25:11.680 --> 00:25:13.460]   którzy są realnie z nami.
+[00:25:13.460 --> 00:25:15.540]   A najbardziej ograniczające przekonanie,
+[00:25:15.540 --> 00:25:17.700]   które myślę,
+[00:25:17.700 --> 00:25:18.960]   że zabrało nam dużo wzrostu,
+[00:25:18.960 --> 00:25:20.000]   to było takie przekonanie,
+[00:25:20.000 --> 00:25:22.780]   że ja muszę być cały czas w rynku
+[00:25:22.780 --> 00:25:25.160]   i ja de facto jeszcze rok temu w marcu
+[00:25:25.160 --> 00:25:28.280]   byłem 16 dni z 20 u klientów,
+[00:25:28.280 --> 00:25:30.900]   co zostawiało mi mniej więcej 4 dni
+[00:25:30.900 --> 00:25:32.720]   na pracę nad własnymi biznesami,
+[00:25:33.120 --> 00:25:36.060]   co było nieracjonalnie niską liczbą
+[00:25:36.060 --> 00:25:37.000]   i bardzo długo
+[00:25:37.000 --> 00:25:38.420]   nie potrafiłem przesunąć tej wajchy.
+[00:25:38.420 --> 00:25:39.840]   To było spowodowane
+[00:25:39.840 --> 00:25:40.660]   między innymi tym,
+[00:25:40.660 --> 00:25:42.120]   że miałem problem z asertywnością,
+[00:25:42.120 --> 00:25:43.560]   czyli mówiłem jakiemuś klientowi,
+[00:25:43.560 --> 00:25:43.940]   że słuchaj,
+[00:25:43.940 --> 00:25:45.560]   już będę musiał mniej do ciebie przyjeżdżać.
+[00:25:45.560 --> 00:25:45.840]   On mówił,
+[00:25:45.840 --> 00:25:47.500]   no weź Szymon,
+[00:25:47.500 --> 00:25:48.920]   no weź,
+[00:25:48.920 --> 00:25:49.980]   zostań.
+[00:25:49.980 --> 00:25:50.920]   A ja mówię,
+[00:25:50.920 --> 00:25:51.800]   no dobra
+[00:25:51.800 --> 00:25:52.780]   i zostawałem.
+[00:25:52.780 --> 00:25:54.100]   I później jakby doszło
+[00:25:54.100 --> 00:25:54.800]   do takiego momentu,
+[00:25:54.800 --> 00:25:55.700]   pozdrawiam cię Kalina,
+[00:25:55.700 --> 00:25:56.520]   Kalina,
+[00:25:56.520 --> 00:25:57.120]   pozdrawiam cię,
+[00:25:57.120 --> 00:25:58.380]   że byłem u innego klienta
+[00:25:58.380 --> 00:25:58.940]   ostatni dzień,
+[00:25:58.940 --> 00:26:00.160]   ona płakała 6 razy,
+[00:26:00.480 --> 00:26:01.380]   że już tam nie będę jeździł,
+[00:26:01.380 --> 00:26:02.540]   bo myśmy razem od dwóch osób
+[00:26:02.540 --> 00:26:04.120]   do 70 ten biznes rozwinęli.
+[00:26:04.120 --> 00:26:04.820]   Było fajnie
+[00:26:04.820 --> 00:26:06.720]   i bardzo, bardzo długo
+[00:26:06.720 --> 00:26:08.120]   nie potrafiłem się
+[00:26:08.120 --> 00:26:08.880]   od tego uwolnić.
+[00:26:08.880 --> 00:26:10.160]   Myślę, że z perspektywy czasu
+[00:26:10.160 --> 00:26:11.720]   zabrało nam to
+[00:26:11.720 --> 00:26:13.420]   trochę wzrostu,
+[00:26:13.420 --> 00:26:14.400]   a mi na pewno dużo
+[00:26:14.400 --> 00:26:18.340]   takiego fizycznej energii wtedy,
+[00:26:18.340 --> 00:26:20.180]   bo jeżeli byłem 16 dni w miesiącu
+[00:26:20.180 --> 00:26:21.320]   w firmach klientów
+[00:26:21.320 --> 00:26:22.180]   na sali szkoleniowej
+[00:26:22.180 --> 00:26:22.640]   i tak dalej,
+[00:26:22.640 --> 00:26:23.400]   to te 4 dni,
+[00:26:23.400 --> 00:26:24.340]   co byłem w swojej firmie,
+[00:26:24.340 --> 00:26:26.160]   to i tak byłem tak wypompowany,
+[00:26:26.160 --> 00:26:27.800]   że nadrabiałem weekendami,
+[00:26:27.800 --> 00:26:28.400]   wieczorami
+[00:26:28.400 --> 00:26:30.040]   i to było coś,
+[00:26:30.040 --> 00:26:31.920]   co bardzo mocno
+[00:26:31.920 --> 00:26:33.460]   mnie ograniczało.
+[00:26:33.460 --> 00:26:34.380]   I ostatnie pytanie,
+[00:26:34.380 --> 00:26:35.720]   które dla Was dzisiaj przygotowałem,
+[00:26:35.720 --> 00:26:37.240]   to pytanie Tomka Krawczyńskiego.
+[00:26:37.240 --> 00:26:38.200]   Czy marketing,
+[00:26:38.200 --> 00:26:39.320]   w formie której uczysz,
+[00:26:39.320 --> 00:26:41.060]   ma sens dla firmy
+[00:26:41.060 --> 00:26:42.020]   działającej lokalnie
+[00:26:42.020 --> 00:26:42.940]   w jednym województwie?
+[00:26:42.940 --> 00:26:43.980]   Większość firm,
+[00:26:43.980 --> 00:26:45.000]   która trafi na stronę,
+[00:26:45.000 --> 00:26:46.700]   i tak nie będzie mogła kupić.
+[00:26:46.700 --> 00:26:48.400]   Już Ci odpowiadam
+[00:26:48.400 --> 00:26:49.000]   na Twoje pytanie.
+[00:26:49.000 --> 00:26:50.580]   Tak ma sens.
+[00:26:51.020 --> 00:26:51.500]   Dlaczego?
+[00:26:51.500 --> 00:26:53.600]   Dlatego, że w marketingu,
+[00:26:53.600 --> 00:26:54.340]   który go uczę,
+[00:26:54.340 --> 00:26:55.360]   jeżeli jesteś na bieżąco
+[00:26:55.360 --> 00:26:56.180]   z naszymi treściami,
+[00:26:56.180 --> 00:26:58.100]   tam są jakieś treści w Tofu,
+[00:26:58.100 --> 00:27:00.580]   jakieś tam treści w Mochu,
+[00:27:00.580 --> 00:27:01.900]   coś, co ma utrzymać klienta
+[00:27:01.900 --> 00:27:04.800]   i są treści sprzedażowe
+[00:27:04.800 --> 00:27:05.780]   w Bofu na samym dole.
+[00:27:05.780 --> 00:27:06.880]   I teraz rzeczywiście
+[00:27:06.880 --> 00:27:07.580]   masz rację,
+[00:27:07.580 --> 00:27:08.560]   może się okazać,
+[00:27:08.560 --> 00:27:09.220]   że większość ludzi,
+[00:27:09.220 --> 00:27:10.680]   która tutaj trafia na stronę
+[00:27:10.680 --> 00:27:12.000]   uśmiechniętych klientów,
+[00:27:12.000 --> 00:27:12.560]   to są klienci
+[00:27:12.560 --> 00:27:13.780]   spoza Twojego województwa.
+[00:27:13.780 --> 00:27:15.880]   Natomiast na szczęście
+[00:27:15.880 --> 00:27:17.200]   nowoczesne systemy reklamowe
+[00:27:17.200 --> 00:27:18.280]   śpieszą Ci z pomocą
+[00:27:18.280 --> 00:27:19.760]   i zarówno Google Ads,
+[00:27:20.760 --> 00:27:22.060]   jak i Facebook Ads
+[00:27:22.060 --> 00:27:24.760]   umożliwiają kupienie ruchu
+[00:27:24.760 --> 00:27:26.520]   tylko z konkretnego województwa.
+[00:27:26.520 --> 00:27:27.680]   W związku z tym
+[00:27:27.680 --> 00:27:28.520]   może się okazać,
+[00:27:28.520 --> 00:27:30.540]   że tak zrobiony marketing,
+[00:27:30.540 --> 00:27:32.080]   jak dokładnie my tego uczymy,
+[00:27:32.080 --> 00:27:33.560]   dalej z remarketingiem
+[00:27:33.560 --> 00:27:34.620]   może z powodzeniem
+[00:27:34.620 --> 00:27:36.520]   gromadzić klientów
+[00:27:36.520 --> 00:27:37.860]   tylko z jednego województwa
+[00:27:37.860 --> 00:27:38.820]   i tylko lokalnie.
+[00:27:38.820 --> 00:27:39.660]   Więc tak,
+[00:27:39.660 --> 00:27:41.240]   możesz marketing budować
+[00:27:41.240 --> 00:27:42.060]   dokładnie w ten sposób,
+[00:27:42.240 --> 00:27:44.920]   ale mając z tyłu głowy to,
+[00:27:44.920 --> 00:27:46.400]   że te źródła muszą być określone,
+[00:27:46.400 --> 00:27:47.900]   ale też nawet jeżeli chciałbyś
+[00:27:47.900 --> 00:27:48.660]   sobie z SEO
+[00:27:48.660 --> 00:27:49.420]   sprowadzać ruch,
+[00:27:49.420 --> 00:27:50.580]   to możesz dodać
+[00:27:50.580 --> 00:27:51.320]   do wszystkich fraz,
+[00:27:51.320 --> 00:27:51.740]   na przykład
+[00:27:51.740 --> 00:27:53.000]   w naszym przypadku
+[00:27:53.000 --> 00:27:53.960]   byłyby to Gliwice
+[00:27:53.960 --> 00:27:55.480]   bądź Śląsk
+[00:27:55.480 --> 00:27:57.040]   i pozycjonować się lokalnie.
+[00:27:57.040 --> 00:27:58.220]   To jest wciąż możliwe,
+[00:27:58.220 --> 00:27:59.000]   jeżeli oczywiście
+[00:27:59.000 --> 00:27:59.540]   w Twojej branży
+[00:27:59.540 --> 00:28:00.840]   klienci szukają produktu,
+[00:28:00.840 --> 00:28:01.520]   który sprzedajesz.
+[00:28:01.520 --> 00:28:03.440]   No i to tyle
+[00:28:03.440 --> 00:28:05.160]   w pierwszym Q&A'u
+[00:28:05.160 --> 00:28:05.680]   w historii
+[00:28:05.680 --> 00:28:06.880]   kanału,
+[00:28:06.880 --> 00:28:08.440]   na którym jesteście
+[00:28:08.440 --> 00:28:09.020]   i programu
+[00:28:09.020 --> 00:28:09.840]   Wise Business School.
+[00:28:09.840 --> 00:28:10.920]   Dajcie znać,
+[00:28:10.920 --> 00:28:12.000]   co sądzicie o takiej formie
+[00:28:12.000 --> 00:28:12.860]   przekazywania wiedzy,
+[00:28:12.860 --> 00:28:13.540]   rozmawiania.
+[00:28:13.540 --> 00:28:15.560]   Jeżeli to jest fajne,
+[00:28:15.560 --> 00:28:16.520]   to pewnie tych Q&A'ów
+[00:28:16.520 --> 00:28:17.420]   możemy robić więcej.
+[00:28:17.420 --> 00:28:18.820]   Dajcie znać koniecznie
+[00:28:18.820 --> 00:28:19.460]   w komentarzu.
+[00:28:19.460 --> 00:28:20.440]   Jeżeli to stanowiło
+[00:28:20.440 --> 00:28:21.000]   dla Was wartość,
+[00:28:21.000 --> 00:28:22.120]   koniecznie zasubskrybujcie
+[00:28:22.120 --> 00:28:22.520]   ten kanał,
+[00:28:22.520 --> 00:28:23.540]   zostańcie z nami na dłużej.
+[00:28:24.160 --> 00:28:25.120]   przesłuchajcie też podcast
+[00:28:25.120 --> 00:28:26.280]   Nowoczesna Spodaż i Marketing.
+[00:28:26.280 --> 00:28:27.740]   Tam już jest kilka Q&A'ów,
+[00:28:27.740 --> 00:28:28.440]   które wydarzyły się
+[00:28:28.440 --> 00:28:29.000]   w przeszłości.
+[00:28:29.000 --> 00:28:30.900]   Jest też więcej historii
+[00:28:30.900 --> 00:28:32.020]   o rozwoju całej grupy.
+[00:28:32.020 --> 00:28:34.240]   Jest też trochę wywiadów
+[00:28:34.240 --> 00:28:35.160]   z ludźmi z naszej grupy,
+[00:28:35.160 --> 00:28:36.280]   więc tam też możecie się
+[00:28:36.280 --> 00:28:38.180]   o tym znacznie więcej dowiedzieć.
+[00:28:38.180 --> 00:28:39.220]   Dzięki bardzo,
+[00:28:39.220 --> 00:28:40.440]   że przesłuchaliście,
+[00:28:40.440 --> 00:28:42.260]   że obejrzeliście ten materiał.
+[00:28:42.260 --> 00:28:44.100]   Do zobaczenia za tydzień w środę.
+[00:28:44.100 --> 00:28:44.920]   Cześć.
+[00:28:54.160 --> 00:29:24.140]   www.astronarium.pl www.facebook.com
+output_txt: saving output to '20251004161500_29min_1gpu.txt'
+
+whisper_print_timings:     load time =   249.23 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   794.29 ms
+whisper_print_timings:   sample time = 35909.92 ms / 55887 runs (     0.64 ms per run)
+whisper_print_timings:   encode time = 126072.81 ms /    73 runs (  1727.02 ms per run)
+whisper_print_timings:   decode time =  1269.05 ms /   172 runs (     7.38 ms per run)
+whisper_print_timings:   batchd time = 95052.38 ms / 55363 runs (     1.72 ms per run)
+whisper_print_timings:   prompt time =  5034.93 ms / 16131 runs (     0.31 ms per run)
+whisper_print_timings:    total time = 267518.62 ms
+ggml_metal_free: deallocating
