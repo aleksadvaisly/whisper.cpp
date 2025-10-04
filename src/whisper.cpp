@@ -140,6 +140,11 @@ static void whisper_log_callback_default(ggml_log_level level, const char * text
 #define WHISPER_MAX_DECODERS 8
 #define WHISPER_MAX_NODES 4096
 
+// Hybrid mode configuration (main thread + workers)
+#define HYBRID_METAL_WORKERS 1  // Metal workers (not counting main thread)
+#define HYBRID_CPU_WORKERS   1  // CPU workers
+#define HYBRID_TOTAL_THREADS (1 + HYBRID_METAL_WORKERS + HYBRID_CPU_WORKERS)  // main + workers
+
 static std::string format(const char * fmt, ...) {
     va_list ap;
     va_list ap2;
@@ -8027,14 +8032,15 @@ int whisper_full_hybrid(
         return whisper_full(ctx, params, samples, n_samples);
     }
 
-    WHISPER_LOG_INFO("%s: Hybrid mode enabled: %d chunks >= 6 threshold, using 2 Metal + 1 CPU pattern\n", __func__, n_chunks);
+    WHISPER_LOG_INFO("%s: Hybrid mode enabled: %d chunks >= 6 threshold, using %d Metal + %d CPU pattern\n",
+        __func__, n_chunks, HYBRID_METAL_WORKERS + 1, HYBRID_CPU_WORKERS);
 
     if (!ctx->params.use_gpu) {
         WHISPER_LOG_WARN("%s: GPU is disabled in context, hybrid mode requires GPU. Falling back to CPU-only\n", __func__);
         return whisper_full(ctx, params, samples, n_samples);
     }
 
-    int n_processors = 3;
+    const int n_processors = HYBRID_TOTAL_THREADS;
 
     int ret = 0;
 
@@ -8134,9 +8140,10 @@ int whisper_full_hybrid(
     ctx->state->t_decode_us /= n_processors;
 
     WHISPER_LOG_WARN("\n");
-    WHISPER_LOG_WARN("%s: Hybrid mode (2 Metal + 1 CPU): audio split into %d chunks at:\n", __func__, n_processors);
+    WHISPER_LOG_WARN("%s: Hybrid mode (%d Metal + %d CPU): audio split into %d chunks at:\n",
+        __func__, HYBRID_METAL_WORKERS + 1, HYBRID_CPU_WORKERS, n_processors);
     for (int i = 0; i < n_processors - 1; ++i) {
-        const char* backend_name = (i == 0) ? "Metal" : "CPU";
+        const char* backend_name = (i < HYBRID_METAL_WORKERS) ? "Metal" : "CPU";
         WHISPER_LOG_WARN("%s: split %d (%s) - %s\n", __func__, (i + 1), backend_name,
             to_timestamp(100*((i + 1)*n_samples_per_processor)/WHISPER_SAMPLE_RATE + offset_t).c_str());
     }
