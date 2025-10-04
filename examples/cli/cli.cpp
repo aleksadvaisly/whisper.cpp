@@ -77,6 +77,7 @@ struct whisper_params {
     bool use_gpu         = true;
     bool flash_attn      = true;
     bool suppress_nst    = false;
+    bool hybrid          = false;
 
     std::string language  = "en";
     std::string prompt;
@@ -165,6 +166,7 @@ static bool whisper_params_parse(int argc, char ** argv, whisper_params & params
         else if (arg == "-tr"   || arg == "--translate")       { params.translate       = true; }
         else if (arg == "-di"   || arg == "--diarize")         { params.diarize         = true; }
         else if (arg == "-tdrz" || arg == "--tinydiarize")     { params.tinydiarize     = true; }
+        else if (arg == "-hb"   || arg == "--hybrid")          { params.hybrid          = true; }
         else if (arg == "-sow"  || arg == "--split-on-word")   { params.split_on_word   = true; }
         else if (arg == "-nf"   || arg == "--no-fallback")     { params.no_fallback     = true; }
         else if (arg == "-otxt" || arg == "--output-txt")      { params.output_txt      = true; }
@@ -246,6 +248,7 @@ static void whisper_print_usage(int /*argc*/, char ** argv, const whisper_params
     fprintf(stderr, "  -tr,       --translate         [%-7s] translate from source language to english\n",      params.translate ? "true" : "false");
     fprintf(stderr, "  -di,       --diarize           [%-7s] stereo audio diarization\n",                       params.diarize ? "true" : "false");
     fprintf(stderr, "  -tdrz,     --tinydiarize       [%-7s] enable tinydiarize (requires a tdrz model)\n",     params.tinydiarize ? "true" : "false");
+    fprintf(stderr, "  -hb,       --hybrid            [%-7s] hybrid CPU+GPU (2 Metal + 1 CPU, >= 6 chunks)\n",     params.hybrid ? "true" : "false");
     fprintf(stderr, "  -nf,       --no-fallback       [%-7s] do not use temperature fallback while decoding\n", params.no_fallback ? "true" : "false");
     fprintf(stderr, "  -otxt,     --output-txt        [%-7s] output result in a text file\n",                   params.output_txt ? "true" : "false");
     fprintf(stderr, "  -ovtt,     --output-vtt        [%-7s] output result in a vtt file\n",                    params.output_vtt ? "true" : "false");
@@ -1256,9 +1259,16 @@ int main(int argc, char ** argv) {
                 wparams.abort_callback_user_data = &is_aborted;
             }
 
-            if (whisper_full_parallel(ctx, wparams, pcmf32.data(), pcmf32.size(), params.n_processors) != 0) {
-                fprintf(stderr, "%s: failed to process audio\n", argv[0]);
-                return 10;
+            if (params.hybrid) {
+                if (whisper_full_hybrid(ctx, wparams, pcmf32.data(), pcmf32.size()) != 0) {
+                    fprintf(stderr, "%s: failed to process audio with hybrid mode\n", argv[0]);
+                    return 10;
+                }
+            } else {
+                if (whisper_full_parallel(ctx, wparams, pcmf32.data(), pcmf32.size(), params.n_processors) != 0) {
+                    fprintf(stderr, "%s: failed to process audio\n", argv[0]);
+                    return 10;
+                }
             }
         }
 

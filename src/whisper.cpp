@@ -1345,6 +1345,49 @@ static std::vector<ggml_backend_t> whisper_backend_init(const whisper_context_pa
     return result;
 }
 
+static std::vector<ggml_backend_t> whisper_backend_init_gpu_only(const whisper_context_params & params) {
+    std::vector<ggml_backend_t> result;
+
+    ggml_backend_t backend_gpu = whisper_backend_init_gpu(params);
+
+    if (backend_gpu) {
+        result.push_back(backend_gpu);
+    }
+
+    for (size_t i = 0; i < ggml_backend_dev_count(); ++i) {
+        ggml_backend_dev_t dev = ggml_backend_dev_get(i);
+        if (ggml_backend_dev_type(dev) == GGML_BACKEND_DEVICE_TYPE_ACCEL) {
+            WHISPER_LOG_INFO("%s: using %s backend\n", __func__, ggml_backend_dev_name(dev));
+            ggml_backend_t backend = ggml_backend_dev_init(dev, nullptr);
+            if (!backend) {
+                WHISPER_LOG_ERROR("%s: failed to initialize %s backend\n", __func__, ggml_backend_dev_name(dev));
+                continue;
+            }
+            result.push_back(backend);
+        }
+    }
+
+    ggml_backend_t backend_cpu = ggml_backend_init_by_type(GGML_BACKEND_DEVICE_TYPE_CPU, nullptr);
+    if (backend_cpu == nullptr) {
+        throw std::runtime_error("failed to initialize CPU backend");
+    }
+    result.push_back(backend_cpu);
+
+    return result;
+}
+
+static std::vector<ggml_backend_t> whisper_backend_init_cpu_only() {
+    std::vector<ggml_backend_t> result;
+
+    ggml_backend_t backend_cpu = ggml_backend_init_by_type(GGML_BACKEND_DEVICE_TYPE_CPU, nullptr);
+    if (backend_cpu == nullptr) {
+        throw std::runtime_error("failed to initialize CPU backend");
+    }
+    result.push_back(backend_cpu);
+
+    return result;
+}
+
 using buft_list_t = std::vector<std::pair<ggml_backend_dev_t, ggml_backend_buffer_type_t>>;
 
 static buft_list_t make_buft_list(whisper_context_params & params) {
@@ -3510,6 +3553,128 @@ struct whisper_state * whisper_init_state(whisper_context * ctx) {
                     const auto & hparams = ctx->model.hparams;
 
                     // TODO: make sure this is the worst-case scenario
+                    const int n_tokens = hparams.n_text_ctx;
+                    const int n_past   = 0;
+
+                    whisper_batch_prep_legacy(state->batch, nullptr, n_tokens, n_past, 0);
+
+                    return whisper_build_graph_decoder(*ctx, *state, state->batch, ctx->params.dtw_token_timestamps, true);
+                });
+
+        if (!ok) {
+            WHISPER_LOG_ERROR("%s: failed to init decoder allocator\n", __func__);
+            whisper_free_state(state);
+            return nullptr;
+        }
+
+        WHISPER_LOG_INFO("%s: compute buffer (decode) = %7.2f MB\n", __func__, whisper_sched_size(state->sched_decode) / 1e6);
+    }
+
+    return state;
+}
+
+static struct whisper_state * whisper_init_state_with_backends(
+        whisper_context * ctx,
+        std::vector<ggml_backend_t> backends) {
+    whisper_state * state = new whisper_state;
+
+    state->backends = std::move(backends);
+    if (state->backends.empty()) {
+        WHISPER_LOG_ERROR("%s: backends vector is empty\n", __func__);
+        whisper_free_state(state);
+        return nullptr;
+    }
+
+    state->kv_self_n_dec = 1;
+    if (!whisper_kv_cache_init(state->kv_self, state->backends[0], ctx->itype,
+                ctx->model.hparams.n_text_state,
+                ctx->model.hparams.n_text_layer,
+                GGML_PAD(ctx->model.hparams.n_text_ctx, 256))) {
+        WHISPER_LOG_ERROR("%s: whisper_kv_cache_init() failed for self-attention cache\n", __func__);
+        whisper_free_state(state);
+        return nullptr;
+    }
+
+    {
+        const size_t memory_size = ggml_nbytes(state->kv_self.k) + ggml_nbytes(state->kv_self.v);
+        WHISPER_LOG_INFO("%s: kv self size  = %7.2f MB\n", __func__, memory_size / 1e6);
+    }
+
+    if (!whisper_kv_cache_init(state->kv_cross, state->backends[0], ctx->itype,
+                ctx->model.hparams.n_text_state,
+                ctx->model.hparams.n_text_layer,
+                GGML_PAD(ctx->model.hparams.n_audio_ctx, 256))) {
+        WHISPER_LOG_ERROR("%s: whisper_kv_cache_init() failed for cross-attention cache\n", __func__);
+        whisper_free_state(state);
+        return nullptr;
+    }
+
+    {
+        const size_t memory_size = ggml_nbytes(state->kv_cross.k) + ggml_nbytes(state->kv_cross.v);
+        WHISPER_LOG_INFO("%s: kv cross size = %7.2f MB\n", __func__, memory_size / 1e6);
+    }
+
+    if (!whisper_kv_cache_init(state->kv_pad, state->backends[0], ctx->itype,
+                ctx->model.hparams.n_audio_state,
+                1,
+                GGML_PAD(ctx->model.hparams.n_audio_ctx, 256))) {
+        WHISPER_LOG_ERROR("%s: whisper_kv_cache_init() failed for self-attention cache\n", __func__);
+        whisper_free_state(state);
+        return nullptr;
+    }
+
+    state->batch = whisper_batch_init(ctx->model.hparams.n_text_ctx, WHISPER_MAX_DECODERS);
+
+    {
+        bool ok = whisper_sched_graph_init(state->sched_conv, state->backends,
+                [&]() {
+                    return whisper_build_graph_conv(*ctx, *state);
+                });
+
+        if (!ok) {
+            WHISPER_LOG_ERROR("%s: failed to init conv allocator\n", __func__);
+            whisper_free_state(state);
+            return nullptr;
+        }
+
+        WHISPER_LOG_INFO("%s: compute buffer (conv)   = %7.2f MB\n", __func__, whisper_sched_size(state->sched_conv) / 1e6);
+    }
+
+    {
+        bool ok = whisper_sched_graph_init(state->sched_encode, state->backends,
+                [&]() {
+                    return whisper_build_graph_encoder(*ctx, *state);
+                });
+
+        if (!ok) {
+            WHISPER_LOG_ERROR("%s: failed to init encode allocator\n", __func__);
+            whisper_free_state(state);
+            return nullptr;
+        }
+
+        WHISPER_LOG_INFO("%s: compute buffer (encode) = %7.2f MB\n", __func__, whisper_sched_size(state->sched_encode) / 1e6);
+    }
+
+    {
+        bool ok = whisper_sched_graph_init(state->sched_cross, state->backends,
+                [&]() {
+                    return whisper_build_graph_cross(*ctx, *state);
+                });
+
+        if (!ok) {
+            WHISPER_LOG_ERROR("%s: failed to init cross allocator\n", __func__);
+            whisper_free_state(state);
+            return nullptr;
+        }
+
+        WHISPER_LOG_INFO("%s: compute buffer (cross)  = %7.2f MB\n", __func__, whisper_sched_size(state->sched_cross) / 1e6);
+    }
+
+    {
+        bool ok = whisper_sched_graph_init(state->sched_decode, state->backends,
+                [&]() {
+                    const auto & hparams = ctx->model.hparams;
+
                     const int n_tokens = hparams.n_text_ctx;
                     const int n_past   = 0;
 
@@ -7829,6 +7994,154 @@ int whisper_full_parallel(
         WHISPER_LOG_WARN("%s: split %d - %s\n", __func__, (i + 1), to_timestamp(100*((i + 1)*n_samples_per_processor)/WHISPER_SAMPLE_RATE + offset_t).c_str());
     }
     WHISPER_LOG_WARN("%s: the transcription quality may be degraded near these boundaries\n", __func__);
+
+    return ret;
+}
+
+int whisper_full_hybrid(
+        struct whisper_context * ctx,
+        struct whisper_full_params params,
+        const float * samples,
+        int n_samples) {
+
+    std::vector<float> vad_samples;
+    if (params.vad) {
+        WHISPER_LOG_INFO("%s: VAD is enabled, processing speech segments only\n", __func__);
+        if (!whisper_vad(ctx, ctx->state, params, samples, n_samples, vad_samples)) {
+            WHISPER_LOG_ERROR("%s: failed to compute VAD\n", __func__);
+            return -1;
+        }
+        if (vad_samples.empty()) {
+            return 0;
+        }
+        samples = vad_samples.data();
+        n_samples = vad_samples.size();
+    }
+
+    const int offset_samples = (WHISPER_SAMPLE_RATE*params.offset_ms)/1000;
+    const int chunk_size_samples = WHISPER_SAMPLE_RATE * WHISPER_CHUNK_SIZE;
+    const int n_chunks = (n_samples - offset_samples + chunk_size_samples - 1) / chunk_size_samples;
+
+    if (n_chunks < 6) {
+        WHISPER_LOG_INFO("%s: Hybrid mode disabled: %d chunks < 6 threshold, falling back to Metal-only\n", __func__, n_chunks);
+        return whisper_full(ctx, params, samples, n_samples);
+    }
+
+    WHISPER_LOG_INFO("%s: Hybrid mode enabled: %d chunks >= 6 threshold, using 2 Metal + 1 CPU pattern\n", __func__, n_chunks);
+
+    if (!ctx->params.use_gpu) {
+        WHISPER_LOG_WARN("%s: GPU is disabled in context, hybrid mode requires GPU. Falling back to CPU-only\n", __func__);
+        return whisper_full(ctx, params, samples, n_samples);
+    }
+
+    int n_processors = 3;
+
+    int ret = 0;
+
+    std::vector<whisper_state*> states;
+
+    const int n_samples_per_processor = (n_samples - offset_samples)/n_processors;
+
+    std::vector<std::thread> workers(n_processors - 1);
+    for (int i = 0; i < n_processors - 1; ++i) {
+        // All states use the same backends list (Metal + CPU)
+        // GGML scheduler will handle backend selection and tensor copies
+        std::vector<ggml_backend_t> backends = whisper_backend_init(ctx->params);
+
+        WHISPER_LOG_INFO("%s: Thread %d initialized with Metal + CPU backends (scheduler will optimize)\n", __func__, i + 1);
+
+        states.push_back(whisper_init_state_with_backends(ctx, std::move(backends)));
+
+        if (states[i] == nullptr) {
+            WHISPER_LOG_ERROR("%s: failed to init state %d\n", __func__, i);
+            for (int j = 0; j < i; ++j) {
+                whisper_free_state(states[j]);
+            }
+            return -1;
+        }
+
+        const int start_samples = offset_samples + (i + 1)*n_samples_per_processor;
+        const int n_samples_cur = (i == n_processors - 2) ? n_samples - start_samples : n_samples_per_processor;
+
+        auto params_cur = params;
+
+        params_cur.offset_ms = 0;
+        params_cur.print_progress = false;
+        params_cur.print_realtime = false;
+
+        params_cur.new_segment_callback = nullptr;
+        params_cur.new_segment_callback_user_data = nullptr;
+
+        params_cur.progress_callback = nullptr;
+        params_cur.progress_callback_user_data = nullptr;
+
+        workers[i] = std::thread(whisper_full_with_state, ctx, states[i], std::move(params_cur), samples + start_samples, n_samples_cur);
+    }
+
+    {
+        auto params_cur = params;
+
+        params_cur.print_realtime = false;
+
+        WHISPER_LOG_INFO("%s: Main thread using GPU (Metal) backend\n", __func__);
+        ret = whisper_full_with_state(ctx, ctx->state, std::move(params_cur), samples, offset_samples + n_samples_per_processor);
+    }
+
+    for (int i = 0; i < n_processors - 1; ++i) {
+        workers[i].join();
+    }
+
+    const int64_t offset_t = (int64_t) params.offset_ms/10.0;
+
+    for (int i = 0; i < n_processors - 1; ++i) {
+        auto& results_i = states[i]->result_all;
+
+        for (auto& result : results_i) {
+            result.t0 += 100 * ((i + 1) * n_samples_per_processor) / WHISPER_SAMPLE_RATE + offset_t;
+            result.t1 += 100 * ((i + 1) * n_samples_per_processor) / WHISPER_SAMPLE_RATE + offset_t;
+
+            if (!ctx->state->result_all.empty()) {
+                result.t0 = std::max(result.t0, ctx->state->result_all.back().t1);
+            }
+
+            ctx->state->result_all.push_back(std::move(result));
+
+            if (params.new_segment_callback) {
+                params.new_segment_callback(ctx, ctx->state, 1, params.new_segment_callback_user_data);
+            }
+        }
+
+        ctx->state->t_mel_us += states[i]->t_mel_us;
+
+        ctx->state->t_sample_us += states[i]->t_sample_us;
+        ctx->state->t_encode_us += states[i]->t_encode_us;
+        ctx->state->t_decode_us += states[i]->t_decode_us;
+        ctx->state->t_batchd_us += states[i]->t_batchd_us;
+        ctx->state->t_prompt_us += states[i]->t_prompt_us;
+
+        ctx->state->n_sample += states[i]->n_sample;
+        ctx->state->n_encode += states[i]->n_encode;
+        ctx->state->n_decode += states[i]->n_decode;
+        ctx->state->n_batchd += states[i]->n_batchd;
+        ctx->state->n_prompt += states[i]->n_prompt;
+
+        whisper_free_state(states[i]);
+    }
+
+    ctx->state->t_mel_us    /= n_processors;
+    ctx->state->t_sample_us /= n_processors;
+    ctx->state->t_encode_us /= n_processors;
+    ctx->state->t_decode_us /= n_processors;
+
+    WHISPER_LOG_WARN("\n");
+    WHISPER_LOG_WARN("%s: Hybrid mode (2 Metal + 1 CPU): audio split into %d chunks at:\n", __func__, n_processors);
+    for (int i = 0; i < n_processors - 1; ++i) {
+        const char* backend_name = (i == 0) ? "Metal" : "CPU";
+        WHISPER_LOG_WARN("%s: split %d (%s) - %s\n", __func__, (i + 1), backend_name,
+            to_timestamp(100*((i + 1)*n_samples_per_processor)/WHISPER_SAMPLE_RATE + offset_t).c_str());
+    }
+    WHISPER_LOG_WARN("%s: Main thread (Metal) - %s\n", __func__, to_timestamp(offset_t).c_str());
+    WHISPER_LOG_WARN("%s: transcription quality may be degraded near chunk boundaries\n", __func__);
 
     return ret;
 }

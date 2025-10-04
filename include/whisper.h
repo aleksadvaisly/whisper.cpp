@@ -624,6 +624,18 @@ extern "C" {
                                    int   n_samples,
                                    int   n_processors);
 
+    // Hybrid CPU+GPU parallel execution (2 Metal + 1 CPU pattern)
+    // Automatically enables hybrid mode when audio has >= 6 chunks (3 minutes at 30s/chunk)
+    // Falls back to GPU-only for shorter audio
+    // Uses heterogeneous backends: 2 threads on Metal GPU, 1 thread on CPU
+    // Result is stored in the default state of the context
+    // Not thread safe if executed in parallel on the same context.
+    WHISPER_API int whisper_full_hybrid(
+                struct whisper_context * ctx,
+            struct whisper_full_params   params,
+                           const float * samples,
+                                   int   n_samples);
+
     // Number of generated text segments
     // A segment can be a few words, a sentence, or even a paragraph.
     WHISPER_API int whisper_full_n_segments           (struct whisper_context * ctx);
