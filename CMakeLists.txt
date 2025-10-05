@@ -66,6 +66,7 @@ option(WHISPER_ALL_WARNINGS_3RD_PARTY "whisper: enable all compiler warnings in 
 # build
 option(WHISPER_FATAL_WARNINGS  "whisper: enable -Werror flag"               OFF)
 option(WHISPER_USE_SYSTEM_GGML "whisper: use system-installed GGML library" OFF)
+set(GGML_SOURCE_DIR "" CACHE PATH "whisper: path to external ggml source directory")
 
 # sanitizers
 option(WHISPER_SANITIZE_THREAD    "whisper: enable thread sanitizer"    OFF)
@@ -136,7 +137,11 @@ if (NOT TARGET ggml)
         endif()
         add_library(ggml ALIAS ggml::ggml)
     else()
-        add_subdirectory(ggml)
+        if (GGML_SOURCE_DIR)
+            add_subdirectory(${GGML_SOURCE_DIR} ggml_external)
+        else()
+            add_subdirectory(ggml)
+        endif()
         if(WIN32)
             # The following adds a _DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR macro and is a workaround for
             # the Windows C++ standard library which does not support constexpr mutexes.
